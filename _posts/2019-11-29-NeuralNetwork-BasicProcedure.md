@@ -190,41 +190,41 @@ Z^{[1]} = \begin{bmatrix} z^{[1](1)}_{1} & z^{[1](2)}_{1} & \dots & z^{[1](m)}_{
                                         z^{[1](1)}_{2} & z^{[1](2)}_{2} & \dots & z^{[1](m)}_{2} \\
                                         z^{[1](1)}_{3} & z^{[1](2)}_{3} & \dots & z^{[1](m)}_{3} \end{bmatrix} $$
                 
-$\quad\quad\quad\: = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix} $
+$$\quad\quad\quad\: = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix} $$
                 
-$\quad\quad\quad\: = W^{[1]}X + b^{[1]} : [3,2][2,m] + [3,1] = [3,m]$
+$$\quad\quad\quad\: = W^{[1]}X + b^{[1]} : [3,2][2,m] + [3,1] = [3,m]$$
                    
-$\quad\:\: A^{[1]} = \begin{bmatrix} a^{[1](1)}_{1} & a^{[1](2)}_{1} & \dots & a^{[1](m)}_{1} \\
+$$\quad\:\: A^{[1]} = \begin{bmatrix} a^{[1](1)}_{1} & a^{[1](2)}_{1} & \dots & a^{[1](m)}_{1} \\
                                               a^{[1](1)}_{2} & a^{[1](2)}_{2} & \dots & a^{[1](m)}_{2} \\
-                                              a^{[1](1)}_{3} & a^{[1](2)}_{3} & \dots & a^{[1](m)}_{3} \end{bmatrix} $
+                                              a^{[1](1)}_{3} & a^{[1](2)}_{3} & \dots & a^{[1](m)}_{3} \end{bmatrix} $$
                                         
-$\qquad\quad\: = activate(Z^{[1]})$
+$$\qquad\quad\: = activate(Z^{[1]})$$
                  
                  
 - [ 2 ] :                     
-$\ we\:\: have\:\: A^{[1]} = \begin{bmatrix} a^{[1](1)}_{1} & a^{[1](2)}_{1} & \dots & a^{[1](m)}_{1} \\
+$$\ we\:\: have\:\: A^{[1]} = \begin{bmatrix} a^{[1](1)}_{1} & a^{[1](2)}_{1} & \dots & a^{[1](m)}_{1} \\
                                              a^{[1](1)}_{2} & a^{[1](2)}_{2} & \dots & a^{[1](m)}_{2} \\
                                              a^{[1](1)}_{3} & a^{[1](2)}_{3} & \dots & a^{[1](m)}_{3} \end{bmatrix}, \:\:\: W^{[2]} = \begin{bmatrix} --w^{[2]T}_{1}-- \end{bmatrix}\,(shape = [1,3]), \:\:\: b^{[2]} = \begin{bmatrix} b^{[2]}_{1}  \end{bmatrix}\,(shape = [1,1]) \\ 
 \qquad \\
-Z^{[2]} = \begin{bmatrix} z^{[2](1)}_{1} & z^{[2](2)}_{1} & \dots & z^{[2](m)}_{1} \end{bmatrix} $ 
+Z^{[2]} = \begin{bmatrix} z^{[2](1)}_{1} & z^{[2](2)}_{1} & \dots & z^{[2](m)}_{1} \end{bmatrix} $$ 
 
-$\quad\quad\quad\:\, = \begin{bmatrix} --w^{[2]T}_{1}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[2]}_{1} \end{bmatrix} $
+$$\quad\quad\quad\:\, = \begin{bmatrix} --w^{[2]T}_{1}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[2]}_{1} \end{bmatrix} $$
 
-$\quad\quad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} : [1,3][3,m] + [3,1] = [1,m]$
+$$\quad\quad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} : [1,3][3,m] + [3,1] = [1,m]$$
 
-$\quad\:\:\,\, A^{[2]} = \begin{bmatrix} a^{[2](1)}_{1} & a^{[2](2)}_{1} & \dots & a^{[2](m)}_{1} \end{bmatrix} $
+$$\quad\:\:\,\, A^{[2]} = \begin{bmatrix} a^{[2](1)}_{1} & a^{[2](2)}_{1} & \dots & a^{[2](m)}_{1} \end{bmatrix} $$
                                         
-$\qquad\quad\:\: = activate(Z^{[2]})$
+$$\qquad\quad\:\: = activate(Z^{[2]})$$
                                        
 
 To summarize,           
                     
-$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
-  \: A^{[1]} \:= activate(Z^{[1]}) $
+$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+  \: A^{[1]} \:= activate(Z^{[1]}) $$
                 
-$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
-\quad\:\:\:\: = \hat{Y} $
+\quad\:\:\:\: = \hat{Y} $$
 
 # 3. Normalizing inputs
 
@@ -386,25 +386,25 @@ for k,v in parameters.items():
 
 After initializing parameters, we can calculate $ \hat{Y} $ that lie in output layer by matrix multiplication.
 
-$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
-  \: A^{[1]} \:= activate(Z^{[1]}) $
+$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+  \: A^{[1]} \:= activate(Z^{[1]}) $$
                 
-$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
-\quad\:\:\:\: = \hat{Y} $
+\quad\:\:\:\: = \hat{Y} $$
             
 The remaining thing  is to choose which actiate function to use.
 
 There are many activate functions that is non-linear. If we do not use non-linear activate functions, then our model is just computing $\hat{Y}$ as a linear function of our input features.
 
-$\ Z^{[1]} = W^{[1]}X + b^{[1]} $            
-$\ A^{[1]} = Z^{[1]} $               
-$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} $               
-$\:\hat{Y} = A^{[2]} = Z^{[2]} \\
+$$\ Z^{[1]} = W^{[1]}X + b^{[1]} $$            
+$$\ A^{[1]} = Z^{[1]} $$               
+$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} $$               
+$$\:\hat{Y} = A^{[2]} = Z^{[2]} \\
              \qquad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} \\
              \qquad\quad\:\, = W^{[2]}(W^{[1]}X + b^{[1]}) + b^{[2]} \\ 
              \qquad\quad\:\, = W^{[2]}W^{[1]}X + W^{[2]}b^{[1]} + b^{[2]} \\
-             \qquad\quad\:\, = W'X + b' \:\:(where\:\: W' = W^{[2]}W^{[1]},\: b' = W^{[2]}b^{[1]} + b^{[2]})$
+             \qquad\quad\:\, = W'X + b' \:\:(where\:\: W' = W^{[2]}W^{[1]},\: b' = W^{[2]}b^{[1]} + b^{[2]})$$
            
 
 So, if we use a linear activate function, then no matter how many layers our neural network has, all its doing is just computing a linear function of the input. Thus, if there is non-linearity feature in output data, we can't catch this non-liniearity with linear activate functions. This is why we use non-linear activate functions. Non-linear activate functions allow our model to capture non-linearities in our data. The following 3 functions are non-linear activate functions many used.
@@ -443,11 +443,11 @@ for k,v in activate_function.items():
 ![image](/assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
 
 
-$1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}}$   
+$$1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}}$$   
                  
-$2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}}$       
+$$2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}}$$       
                    
-$3. relu( z ) = \max(0, z)$
+$$3. relu( z ) = \max(0, z)$$
 
 Sigmoid, tanh, relu functions are commonly used. For a long time, s-shaped function called tanh or sigmoid was a popular activation function. Among them, tanh function almost always works better than sigmoid function, because if we use tanh function which has value between -1 and +1, the mean of this function is 0, while sigmoid function has mean 0.5. It kind of has the effect of centering our data so that the mean of our data is closer to 0 rather than 0.5. And this actually makes learning for the next layer a little bit easier. One exception is output layer. In the case that y_hat have to be probability that is in between 0 and 1, we have to use sigmoid function as activate function. But, downside of s-shaped function like sigmoid and tanh is that when z is very large or very small, the slope of the function ends up being close to 0. So this can slow down gradient descent. 
 
@@ -543,16 +543,16 @@ To train the parameters w and b of our model, we need to define a loss function 
 
 Loss function is for a single training example. The following functions are commonly used loss functions.
 - regression problem:                   
-$\ L(\hat{Y}^{(i)}, Y^{(i)}) = (\hat{Y}^{(i)} -\: Y^{(i)})^{2}\\ $
+$$\ L(\hat{Y}^{(i)}, Y^{(i)}) = (\hat{Y}^{(i)} -\: Y^{(i)})^{2}\\ $$
                 
 - classification problem:            
-$\ L(\hat{Y}^{(i)}, Y^{(i)}) = -[Y^{(i)}\,log\hat{Y}^{(i)} + (1-Y^{(i)})\,log(1-\hat{Y}^{(i)})] $
-    - If $\ Y^{(i)} = 1 $: $\ L(\hat{Y}^{(i)}, Y^{(i)}) = - log\hat{Y}^{(i)} $ <- We want $\ log\hat{Y}^{(i)} $ to be large, which means $\hat{Y}^{(i)} $ have to be large. 
-    - If $\ Y^{(i)} = 0 $: $\ L(\hat{Y}^{(i)}, Y^{(i)}) = - log(1-\hat{Y}^{(i)}) $ <- We want $\ log(1-\hat{Y}^{(i)}) $ to be large, which means $\hat{Y}^{(i)} $ have to be small.
+$$\ L(\hat{Y}^{(i)}, Y^{(i)}) = -[Y^{(i)}\,log\hat{Y}^{(i)} + (1-Y^{(i)})\,log(1-\hat{Y}^{(i)})] $$
+    - If $$\ Y^{(i)} = 1 $$: $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = - log\hat{Y}^{(i)} $$ <- We want $$\ log\hat{Y}^{(i)} $$ to be large, which means $$\hat{Y}^{(i)} $$ have to be large. 
+    - If $$\ Y^{(i)} = 0 $$: $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = - log(1-\hat{Y}^{(i)}) $$ <- We want $$\ log(1-\hat{Y}^{(i)}) $$ to be large, which means $$\hat{Y}^{(i)} $$ have to be small.
 
 While loss function measures how well our model is doing on each single example, Cost function measures how well our model is doing on entire training set. That is, we use cost functions to aggregate all losses from each single training example into a single measure of the model's predictive performance.           
 
-$\ J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $
+$$\ J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $$
 
 
 
@@ -621,11 +621,11 @@ Let's think about we are given weight value which is not equal to 2, and we want
 - if given weight w = 1, the slope at w = 1 is -2 < 0. So w have to move to plus direction(bigger number) to arrive at w = 2.
 - if given weight w = 3, the slope at w = 3 is  2 > 0. So w have to move to minus direction(smaller number) to arrive at w = 2.
               
-So, we can add or subtract slope from current weight value to move to w = 2. But if the step is too big, it might lead us far astray. So instead of directly subtracting or adding the slope, we multiply the slope by a small number, called the learning rate, and we change the weights by the product of tht multiplication. Learning rate are frequently around $\alpha$ = 0.01       
+So, we can add or subtract slope from current weight value to move to w = 2. But if the step is too big, it might lead us far astray. So instead of directly subtracting or adding the slope, we multiply the slope by a small number, called the learning rate, and we change the weights by the product of tht multiplication. Learning rate are frequently around $$\alpha$$ = 0.01       
                      
 w = w - $\alpha \frac{\partial J}{\partial w}$   
              
-Let's update given weight 1.($\alpha$ = 0.01)
+Let's update given weight 1.($$\alpha$$ = 0.01)
 
 
 ```python
@@ -748,39 +748,12 @@ print(grads.keys())
     dict_keys(['dW2', 'db2', 'dA1', 'dW1', 'db1'])
 
 
-### Gradient checking
 
-
-```python
-# take w1 b1 .... wL bL and reshape into a big vector theta
-# take dw1 db1 ... dwL dbL and reshape into a big vector theta
-
-# J(theta)  = J(theta1 theta2 ... )
-
-# for each i
-#     dtheta_appre[i] = J(1, 2, .... theta i + 입실론, .. ) - J(1, 2, ... theta i -입실론, ... ) / 2입실론 =비슷 dtheta[i] = dj/dtheta[i]
-    
-    
-# dtheta approx =? d theta check: \\dtheta approx - dtheta\\_2 / \\dtheta_approx\\_2 + \\dtheta\\_2 =비슷 10^-7 : great
-# 10^-5 may be bug, check
-# 10^-3 check
-
-# 입실론 = 10^-7
-
-
-# don't use in training only to debug
-# if algorithm fails grad check, look at components to try identify bug
-# remember regularization
-# doesn't work with dropout
-# run at random initialziation:
-    
-    
-```
 
 ### Update parameters
 
 By using above gradients, we can update our parameters by following gradient descent rule:              
-$ \theta = \theta - \alpha \frac{\partial J }{ \partial \theta }$ where $\alpha$ is the learning rate and $\theta$ represents a parameter.
+$$ \theta = \theta - \alpha \frac{\partial J }{ \partial \theta }$$ where $$\alpha$$ is the learning rate and $$\theta$$ represents a parameter.
 
 
 ```python
@@ -845,7 +818,7 @@ To be effective in developing our deep neural networks, we need to organize hype
     - The number of hidden layers
     - The number of hidden nodes 
     - Activation function 
-    - Learning rate ($ \,\alpha\, $) : It determine how our parameters evolve.
+    - Learning rate ($$ \,\alpha\, $$) : It determine how our parameters evolve.
     - The number of iterations : How many time we will do optimization procedure with our training datas.
     - Momentum term
     - Mini batch size
@@ -928,10 +901,10 @@ parameters = nn_model(X, Y, [2,3,1], initialization_method = 'random', hidden_ac
 ### Predictions and Accuracy
 
 Output value of our model is the probability that the input data belongs to 1. So, let's assign our output value by following rule:          
-$y_{prediction} = \mathbb 1 \text{{activation > 0.5}} = \begin{cases}
+$$y_{prediction} = \mathbb 1 \text{{activation > 0.5}} = \begin{cases}
       1 & \text{if}\ activation > 0.5 \\
       0 & \text{otherwise}
-    \end{cases}$  
+    \end{cases}$$  
 
 
 ```python

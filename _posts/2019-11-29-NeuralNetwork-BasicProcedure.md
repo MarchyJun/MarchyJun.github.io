@@ -161,11 +161,11 @@ $$ Let \:\: w^{[1]}_1 = \begin{bmatrix} w^{[1]}_{11} \\ w^{[1]}_{21} \end{bmatri
        \qquad\qquad\,  = \begin{bmatrix} w^{[1]}_{11} & w^{[1]}_{21}\end{bmatrix}\begin{bmatrix} x^{(i)}_{1} \\ x^{(i)}_{2} \end{bmatrix} + b^{[1]}_{1} \\
        \qquad\qquad\,  = w^{[1]T}_1X^{(i)} + b^{[1]}_{1} \qquad\qquad\qquad and \:\:\:\, a^{[1](i)}_{1} = activate(z^{[1](i)}_{1}) \\
            \qquad\: z^{[1](i)}_{2} = w^{[1]T}_{2}X^{(i)} + b^{[1]}_{2} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{2} = activate(z^{[1](i)}_{2})\\
-           \qquad\: z^{[1](i)}_{3} = w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{3} = activate(z^{[1](i)}_{3}) $$
+           \qquad\: z^{[1](i)}_{3} = w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{3} = activate(z^{[1](i)}_{3})$
       
       
 - [ 2 ] :         
-$$\ Let \:\: w^{[2]}_1 = \begin{bmatrix} w^{[2]}_{11} \\ w^{[2]}_{21} \\ w^{[2]}_{31} \end{bmatrix} \\
+$\ Let \:\: w^{[2]}_1 = \begin{bmatrix} w^{[2]}_{11} \\ w^{[2]}_{21} \\ w^{[2]}_{31} \end{bmatrix} \\
         Then \:\: z^{[2](i)}_{1} = a^{[1](i)}_{1}w^{[2]}_{11} + a^{[1](i)}_{2}w^{[2]}_{21} + a^{[1](i)}_{3}w^{[2]}_{31} + b^{[2]}_{1} \\
        \qquad\qquad\,  = \begin{bmatrix} w^{[2]}_{11} & w^{[2]}_{21} & w^{[2]}_{31} \end{bmatrix}\begin{bmatrix} a^{[1](i)}_{1} \\ a^{[1](i)}_{2} \\ a^{[3](i)}_{3} \end{bmatrix} + b^{[2]}_{1} \\
        \qquad\qquad\,  = w^{[2]T}_1a^{[1](i)} + b^{[2]}_{1} \qquad\qquad\qquad and \:\:\:\, a^{[2](i)}_{1} = activate(z^{[2](i)}_{1}) $$
@@ -181,10 +181,10 @@ $$\ Let \:\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\
 $$\ \\
 Likewise, \:\:\: z^{[2](i)} = W^{[2]}X^{(i)} + b^{[2]} \quad and \:\:\: a^{[2](i)} = activate(z^{[2](i)}) $$
 
-Since there are m data points, we have to do above procedure m times if we don't vectorize. So, let's vectorize all 1, 2, ... , $$\ m_{th}$ procedure. 
+Since there are m data points, we have to do above procedure m times if we don't vectorize. So, let's vectorize all 1, 2, ... , $$\ m_{th}$$ procedure. 
 
 - [ 1 ] :                
-$$ Let \:\: X = \begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix}\,(shape = [2, m]), \:\:\: and\:\: we\:\: have\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1]) \\ 
+$$Let \:\: X = \begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix}\,(shape = [2, m]), \:\:\: and\:\: we\:\: have\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1]) \\ 
 \qquad \\
 Z^{[1]} = \begin{bmatrix} z^{[1](1)}_{1} & z^{[1](2)}_{1} & \dots & z^{[1](m)}_{1} \\
                                         z^{[1](1)}_{2} & z^{[1](2)}_{2} & \dots & z^{[1](m)}_{2} \\
@@ -210,21 +210,22 @@ Z^{[2]} = \begin{bmatrix} z^{[2](1)}_{1} & z^{[2](2)}_{1} & \dots & z^{[2](m)}_{
 
 $$\quad\quad\quad\:\, = \begin{bmatrix} --w^{[2]T}_{1}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[2]}_{1} \end{bmatrix} $$
 
-$$\quad\quad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} : [1,3][3,m] + [3,1] = [1,m]$$
+$$\quad\quad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} : [1,3][3,m] + [3,1] = [1,m]$
 
-$$\quad\:\:\,\, A^{[2]} = \begin{bmatrix} a^{[2](1)}_{1} & a^{[2](2)}_{1} & \dots & a^{[2](m)}_{1} \end{bmatrix} $$
+$\quad\:\:\,\, A^{[2]} = \begin{bmatrix} a^{[2](1)}_{1} & a^{[2](2)}_{1} & \dots & a^{[2](m)}_{1} \end{bmatrix} $$
                                         
 $$\qquad\quad\:\: = activate(Z^{[2]})$$
+                                       
                                        
 
 To summarize,           
                     
-$$ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} ( A^{[0]} = X ) $$
-$$ A^{[1]} = activate(Z^{[1]}) $$
+$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+  \: A^{[1]} \:= activate(Z^{[1]}) $$
                 
-$$ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} $$
-$$ A^{[2]} = activate(Z^{[2]}) $$
-$$         = \hat{Y} $$
+$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+  \: A^{[2]} \:= activate(Z^{[2]}) \\
+\quad\:\:\:\: = \hat{Y} $$
 
 # 3. Normalizing inputs
 
@@ -296,7 +297,7 @@ If we use unnormalized input features, it is more likely that our cost function 
 
 But in our toy data, our features came in on similar scales. So I will not do normalizing
 
-# 4. Forward Propagation ( Calculate $ \hat{Y} $ )
+# 4. Forward Propagation ( Calculate $$ \hat{Y} $$ )
 
 ### Initialize Weights and bias
 
@@ -392,6 +393,14 @@ $$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
 $$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
 \quad\:\:\:\: = \hat{Y} $$
+
+                    
+$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+  \: A^{[1]} \:= activate(Z^{[1]}) $$
+                
+$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+  \: A^{[2]} \:= activate(Z^{[2]}) \\
+\quad\:\:\:\: = \hat{Y} $$
             
 The remaining thing  is to choose which actiate function to use.
 
@@ -443,11 +452,11 @@ for k,v in activate_function.items():
 ![image](/assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
 
 
-$$1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}}$$   
+$$ 1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}} $$   
                  
-$$2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}}$$       
+$$ 2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} $$       
                    
-$$3. relu( z ) = \max(0, z)$$
+$$ 3. relu( z ) = \max(0, z) $$
 
 Sigmoid, tanh, relu functions are commonly used. For a long time, s-shaped function called tanh or sigmoid was a popular activation function. Among them, tanh function almost always works better than sigmoid function, because if we use tanh function which has value between -1 and +1, the mean of this function is 0, while sigmoid function has mean 0.5. It kind of has the effect of centering our data so that the mean of our data is closer to 0 rather than 0.5. And this actually makes learning for the next layer a little bit easier. One exception is output layer. In the case that y_hat have to be probability that is in between 0 and 1, we have to use sigmoid function as activate function. But, downside of s-shaped function like sigmoid and tanh is that when z is very large or very small, the slope of the function ends up being close to 0. So this can slow down gradient descent. 
 
@@ -552,6 +561,7 @@ $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = -[Y^{(i)}\,log\hat{Y}^{(i)} + (1-Y^{(i)})\,log(1
 
 While loss function measures how well our model is doing on each single example, Cost function measures how well our model is doing on entire training set. That is, we use cost functions to aggregate all losses from each single training example into a single measure of the model's predictive performance.           
 
+$\ J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $
 $$\ J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $$
 
 

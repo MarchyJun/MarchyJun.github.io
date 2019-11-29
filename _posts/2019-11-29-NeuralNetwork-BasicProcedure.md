@@ -94,7 +94,7 @@ print('Train data Y shape:' + str(Y.shape))
 
 Let's consider we will use following neurl network structure and let's set network parameters corresponding to our network. 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.PNG)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NN_image.PNG)
 
 
 ```python
@@ -151,7 +151,7 @@ These weights indicate how strongly nodes effect later nodes that the line ends 
 
 ### Vectorization
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.PNG)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NN_image.PNG)
 
 
 For i_th data, there are following calculation procedure:
@@ -282,13 +282,13 @@ plt.show()
 ```
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_34_0.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_34_0.png)
 
 
 - step 1 : subtract each mean. So, x1, x2 will have same mean = 0
 - step 2 : divide each standard deviation. So, x1, x2 will have same standard dievation = 1
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/normalize.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/normalize.png)
 
 
 If we use unnormalized input features, it is more likely that our cost function will be very elongated function. It means we have to use very small learning rate. Whereas if we normalize the features, then our cost function will be more symmetric. It means wherever we strart, gradient descent can pretty much go straight to the minimum. So we can take much larger steps with gradient descent.
@@ -439,7 +439,7 @@ for k,v in activate_function.items():
 ```
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
 
 
 $1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}}$   
@@ -613,7 +613,7 @@ plt.show()
 ```
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_68_0.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_68_0.png)
 
 
 Let's think about we are given weight value which is not equal to 2, and we want to update weight to 2.     
@@ -670,7 +670,7 @@ w, cost = update_w(1, 100, 0.01)
 
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_72_1.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_72_1.png)
 
 
 In order to Gradient Descent to work, we must choose the learning rate wisely. The learning rate $\alpha$  determines how rapidly we update the parameters. If the learning rate is too large we may "overshoot" the optimal value. Similarly, if it is too small we will need too many iterations to converge to the best values. That's why it is crucial to use a well-tuned learning rate.
@@ -679,13 +679,13 @@ In order to Gradient Descent to work, we must choose the learning rate wisely. T
 
 To do gradient optimization, we need to get gradient of the cost function with respect to w and b. We can get gradient of each parameter by using chain rule.
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/graph.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/graph.png)
 
 
 Let's calculate gradient.             
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/vectorization.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/vectorization.png)
 
 
 
@@ -917,7 +917,7 @@ parameters = nn_model(X, Y, [2,3,1], initialization_method = 'random', hidden_ac
 
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_93_1.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_93_1.png)
 
 
 ### Predictions and Accuracy
@@ -964,7 +964,7 @@ plt.show()
 ```
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_98_0.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_98_0.png)
 
 
 
@@ -1090,7 +1090,7 @@ for i, n_h in enumerate(hidden_layer_sizes):
 
 
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_104_1.png)
+![png](../assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_104_1.png)
 
 
 The models that have 4 nodes and 50 nodes show highest accuracy : 91.6% and 92.7%. The difference in time spent optimizing models is very large( 4 nodes: 1827ms vs. 50 nodes: 8951ms), the difference in accuracy between the two models is very small( 4 nodes: 91.6% vs. 50 nodes: 92.7%). Thus, the best hidden layer size seems to be around n_h = 4.

@@ -15,23 +15,23 @@ One of the problems of training very deep neural networks is vanishing and explo
 ![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/deep.png)
 
 Let's consider above deep network without b. For the sake of simplicity, let's say we using linear activation function.
-$$ /, //
+$$ \,\\
 dZ^{[L]} \\
-dW^{[L]} = dZ^{[L]}Z^{[L-1]} \\ \qquad\:\: 
+dW^{[L]} = dZ^{[L]}Z^{[L-1]} \\ \qquad\:\:\, 
          = dZ^{[L]}W^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\
 \, \\        
 dZ^{[L-1]} \:\, = dZ^{[L]}W^{[L]} \\
-dW^{[L-1]} = dZ^{[L-1]}Z^{[L-2]} \\ \qquad\:\:\:\:\:\, 
-           = dZ^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\, 
+dW^{[L-1]} = dZ^{[L-1]}Z^{[L-2]} \\ \qquad\:\:\:\:\:\;\: 
+           = dZ^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\;\:
            = dZ^{[L]}W^{[L]}W^{[L-2]} \dots W^{[1]}X \\
 \, \\
 dZ^{[L-2]} \:\, = dZ^{[L-1]}W^{[L-1]} \\
-dW^{[L-2]} = dZ^{[L-2]}Z^{[L-3]} \\ \qquad\:\:\:\:\:\, 
-           = dZ^{[L-2]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\, 
-           = dZ^{[L-1]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\, 
+dW^{[L-2]} = dZ^{[L-2]}Z^{[L-3]} \\ \qquad\:\:\:\:\:\;\: 
+           = dZ^{[L-2]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\;\: 
+           = dZ^{[L-1]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\;\: 
            = dZ^{[L]}W^{[L]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ 
 \, \\
-dW^{[l]} = dZ^{[L]}W^{[L]}W^{[L-1]} \dots W^{[l+1]}W^{[l-1]}W^{[l-2]} \dots W^{[1]}X \\  \qquad\,  
+dW^{[l]} = dZ^{[L]}W^{[L]}W^{[L-1]} \dots W^{[l+1]}W^{[l-1]}W^{[l-2]} \dots W^{[1]}X \\  \qquad\,\,  
          = dZ^{[L]}\prod_{i=1,\neq l}^{L}W^{[i]} \\ 
 \, \\
 So,\: if \:\: 
@@ -63,14 +63,14 @@ It turns out that a partial solution to above vanishing & exploding gradient pro
 ![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/deep2.png)
 
 Let's consider above simple network. 
-
-$Z^{[l]}_{1} = W^{[l]}Z^{[l-1]} \\
-\quad\:\: = W^{[l]}_{1}Z^{[l-1]}_{1} + W^{[l]}_{2}Z^{[l-1]}_{2} + \dots + W^{[l]}_{n^{[l-1]}}Z^{[l-1]}_{n^{[l-1]}}$
+$$ \, \\
+Z^{[l]}_{1} = W^{[l]}Z^{[l-1]} \\ \quad\:\: 
+            = W^{[l]}_{1}Z^{[l-1]}_{1} + W^{[l]}_{2}Z^{[l-1]}_{2} + \dots + W^{[l]}_{n^{[l-1]}}Z^{[l-1]}_{n^{[l-1]}} $$
                 
 So, if $n^{[l-1]}$ is big(= have many neurons), then since $Z^{[l]}$ is sum of $n^{[l-1]}$ terms, it has high probability to explode or diminish. So, we want to set $W^{[l]}$ to be small. We can do this by add some terms in our random initialization.
-
-$W^{[l]}$ = random_initialization * $\sqrt{V(W^{[l]})}$
-- Relu activation :  $V(W^{[l]}) = \frac{2}{n^{[l-1]}} $
+$$ \, \\
+W^{[l]}$ = random_initialization * $\sqrt{V(W^{[l]})} $$
+- Relu activation : $V(W^{[l]}) = \frac{2}{n^{[l-1]}} $
 - tanh activation :  $V(W^{[l]}) = \frac{1}{n^{[l-1]}} $
      
 Let's compare different initialization methods.
@@ -470,13 +470,6 @@ result.style.set_properties(subset=["Model",'Train accuracy', 'Problem/Comment']
 
 
 ![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_33_0.png)
-
-
-| Model                                          | Train accuracy | Problem / Comment       |
-|------------------------------------------------|----------------|-------------------------|
-| 2/3/1 NN with zero initialization              | 0.5            | fails to break symmetry |
-| 2/3/1 NN with large random initialization      | 0.742          | too large weights       |
-| 2/3/1 NN with appropriate small initialization | 0.924          | recommended method      |
 
 <style  type="text/css" >
     #T_6c8cc518_94f9_11e9_bea6_38f9d34d80a9row0_col0 {

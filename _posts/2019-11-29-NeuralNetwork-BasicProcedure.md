@@ -437,33 +437,26 @@ for k,v in parameters.items():
 
 After initializing parameters, we can calculate $ \hat{Y} $ that lie in output layer by matrix multiplication.
 
-$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
-  \: A^{[1]} \:= activate(Z^{[1]}) $
-                
-$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
-  \: A^{[2]} \:= activate(Z^{[2]}) \\
-\quad\:\:\:\: = \hat{Y} $
-
-                    
-$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
-  \: A^{[1]} \:= activate(Z^{[1]}) $$
-                
-$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
-  \: A^{[2]} \:= activate(Z^{[2]}) \\
-\quad\:\:\:\: = \hat{Y} $$
+$$ 
+Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+A^{[1]} = activate(Z^{[1]}) \\
+Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+A^{[2]} = activate(Z^{[2]}) \\ \quad\:\:\: 
+        = \hat{Y}  $$
             
 The remaining thing  is to choose which actiate function to use.
 
 There are many activate functions that is non-linear. If we do not use non-linear activate functions, then our model is just computing $\hat{Y}$ as a linear function of our input features.
 
-$$\ Z^{[1]} = W^{[1]}X + b^{[1]} $$            
-$$\ A^{[1]} = Z^{[1]} $$               
-$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} $$               
-$$\:\hat{Y} = A^{[2]} = Z^{[2]} \\
-             \qquad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} \\
-             \qquad\quad\:\, = W^{[2]}(W^{[1]}X + b^{[1]}) + b^{[2]} \\ 
-             \qquad\quad\:\, = W^{[2]}W^{[1]}X + W^{[2]}b^{[1]} + b^{[2]} \\
-             \qquad\quad\:\, = W'X + b' \:\:(where\:\: W' = W^{[2]}W^{[1]},\: b' = W^{[2]}b^{[1]} + b^{[2]})$$
+$$
+Z^{[1]} = W^{[1]}X + b^{[1]} \\            
+A^{[1]} = Z^{[1]} \\               
+Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\               
+\hat{Y} = A^{[2]} = Z^{[2]} \\ \qquad\quad\;\:\, 
+                  = W^{[2]}A^{[1]} + b^{[2]} \\ \qquad\quad\;\:\, 
+                  = W^{[2]}(W^{[1]}X + b^{[1]}) + b^{[2]} \\ \qquad\quad\;\:\, 
+                  = W^{[2]}W^{[1]}X + W^{[2]}b^{[1]} + b^{[2]} \\ \qquad\quad\;\:\, 
+                  = W'X + b' \:\:(where\:\: W' = W^{[2]}W^{[1]},\: b' = W^{[2]}b^{[1]} + b^{[2]}) $$
            
 
 So, if we use a linear activate function, then no matter how many layers our neural network has, all its doing is just computing a linear function of the input. Thus, if there is non-linearity feature in output data, we can't catch this non-liniearity with linear activate functions. This is why we use non-linear activate functions. Non-linear activate functions allow our model to capture non-linearities in our data. The following 3 functions are non-linear activate functions many used.
@@ -502,11 +495,10 @@ for k,v in activate_function.items():
 ![image](/assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
 
 
-$$ 1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}} $$   
-                 
-$$ 2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} $$       
-                   
-$$ 3. relu( z ) = \max(0, z) $$
+$$ 
+1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}} \\   
+2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} \\       
+3. relu( z ) = \max(0, z) $$
 
 Sigmoid, tanh, relu functions are commonly used. For a long time, s-shaped function called tanh or sigmoid was a popular activation function. Among them, tanh function almost always works better than sigmoid function, because if we use tanh function which has value between -1 and +1, the mean of this function is 0, while sigmoid function has mean 0.5. It kind of has the effect of centering our data so that the mean of our data is closer to 0 rather than 0.5. And this actually makes learning for the next layer a little bit easier. One exception is output layer. In the case that y_hat have to be probability that is in between 0 and 1, we have to use sigmoid function as activate function. But, downside of s-shaped function like sigmoid and tanh is that when z is very large or very small, the slope of the function ends up being close to 0. So this can slow down gradient descent. 
 
@@ -611,8 +603,8 @@ $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = -[Y^{(i)}\,log\hat{Y}^{(i)} + (1-Y^{(i)})\,log(1
 
 While loss function measures how well our model is doing on each single example, Cost function measures how well our model is doing on entire training set. That is, we use cost functions to aggregate all losses from each single training example into a single measure of the model's predictive performance.           
 
-$\ J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $
-$$\ J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $$
+$$ 
+J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $$
 
 
 

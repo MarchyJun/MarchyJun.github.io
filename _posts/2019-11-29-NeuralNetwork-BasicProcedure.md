@@ -107,7 +107,7 @@ def check_network_parameter(X, Y, layer_dims):
     return layer_dims
 
 ```
-
+ 
 
 ```python
 layer_dims = check_network_parameter(X, Y, [2,3,1])

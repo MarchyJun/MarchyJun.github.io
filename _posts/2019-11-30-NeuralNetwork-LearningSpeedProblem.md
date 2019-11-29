@@ -29,18 +29,18 @@ Let's split up our entire training set into smaller training set, which is calle
 
 So, algorithm to do gradient descent with each mini batch $X^{\small\{t\small\}}, Y^{\small\{t\small\}}$ is called minibatch gradient descent rather than with entire 10000 training data, which is called batch gradient descent.
 
-For t from 1 to 10       
-$$ \,\\ \quad\:\: 
+$$ For \;t \;from \;1 \;to \;10
+\,\\ \quad\:\: 
 Z^{[1]} = W^{[1]}X^{\small\{t\small\}} + b^{[l]} \\ \quad\:\: 
 A^{[1]} = g^{[1]}(Z^{[1]}) \\ \quad\:\: 
 \vdots \\ \quad\:\: 
 Z^{[L]} = W^{[L]}A^{[L-1]} + b^{[L]} \\ \quad\:\: 
 A^{[L]} = g^{[L]}(Z^{[L]}) \\ 
 \, \\ \quad\:\: 
-J(W, b) = \frac{1}{1000}\sum_{i = 1}^{1000}L(\hat{Y}^{(i)}, Y^{(i)})\: for\: X^{\small\{t\small\}}, Y^{\small\{t\small\}} $$
-
-         Compute gradients and update parameters for l from 1 to L       
-$$ \, \\ \quad\:\: 
+J(W, b) = \frac{1}{1000}\sum_{i = 1}^{1000}L(\hat{Y}^{(i)}, Y^{(i)})\: for\: X^{\small\{t\small\}}, Y^{\small\{t\small\}} \\
+\, \\ \quad\:\:
+Compute gradients and update parameters for l from 1 to L \\       
+\, \\ \quad\:\: 
 W^{[l]} = W^{[l]} - \alpha dW^{[l]}\\ \quad\:\: 
 b^{[l]} \:\:\:= b^{[l]} \:\:\:- \alpha db^{[l]} $$  
 
@@ -170,10 +170,10 @@ Optimization algorith with this exponentially weight moving average is called gr
 $$ \,\\
 Set\:\, 
 V_{dW} = 0,\, V_{db} = 0 \\
-On \:\, iteration \:\, t $$
-
-    compute dW, db on current mini-batch
-$$ \,\\ \quad\:\: 
+On \:\, iteration \:\, t \\
+\,\\ \quad\:\: 
+compute \;dW, \;db \;on \;current \;mini-batch \\
+\,\\ \quad\:\: 
 V_{dW} = \beta_{1}\,V_{dW} + (1-\,\beta_{1}\,)\,dW \\ \quad\:\: 
 V_{db} \:\,= \beta_{1}\,V_{db} \:\,+ (1-\,\beta_{1}\,)\,db \\
 \, \\ \quad\:\: 
@@ -222,20 +222,18 @@ There is another algorithm called RMSprop, which can also speed up gradient desc
 ![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/rms1.png)
 
 Let's consider above example. If we check the left image, we want to slow down our learning on vertical direction, while we want to speed up our learning on horizontal direction. So, if we update our parameters like this:
-
-$ Set\:\, S_{dW} = 0,\, S_{db} = 0 $
-                
-$ On \:\, iteration \:\, t $
-
-    compute dW, db on current mini-batch
-$
-\quad\:\: S_{dW} = \beta_{2}\,S_{dW} + (1-\,\beta_{2}\,)\,(dW)^{2} \\
-\quad\:\: S_{db} \:\,= \beta_{2}\,S_{db} \:\,+ (1-\,\beta_{2}\,)\,(db)^{2} \\
-$
-            
-$
-\quad\:\: W = W - \alpha\, \frac{dW}{\sqrt{S_{dW}} + \epsilon} \\
-\quad\:\: b \:\,\,= b \:\:\,- \alpha\, \frac{db}{\sqrt{S_{db}} + \epsilon} $
+$$ \, \\
+Set\:\, 
+S_{dW} = 0,\, S_{db} = 0 \\
+On \:\, iteration \:\, t \\
+\, \\ \quad\:\:
+compute \;dW, \;db \;on \;current \;mini-batch \\
+\, \\ \quad\:\: 
+S_{dW} = \beta_{2}\,S_{dW} + (1-\,\beta_{2}\,)\,(dW)^{2} \\ \quad\:\: 
+S_{db} \:\,= \beta_{2}\,S_{db} \:\,+ (1-\,\beta_{2}\,)\,(db)^{2} \\
+\, \\ \quad\:\: 
+W = W - \alpha\, \frac{dW}{\sqrt{S_{dW}} + \epsilon} \\ \quad\:\: 
+b \:\,\,= b \:\:\,- \alpha\, \frac{db}{\sqrt{S_{db}} + \epsilon} $$
 
 $\epsilon\:$ is for making our algorithm do not divide $dW$ and $db$ by 0. People usually set $\epsilon$ as $10^{-8}$
 
@@ -276,29 +274,25 @@ def update_parameters_with_rms(parameters, grads, s, beta2, learning_rate):
 ### Gradient Descent with ADAptive Moment estimation
 
 Adam optimization algorithm is basically taking momentum and rms prop and putting them together. This adam optimization algorithm is one of those rare algorithms that has been shown to work well across a wide range of deep learning architectures.
-
-$ Set\:\, V_{dW} = 0,\, V_{db} = 0,\, S_{dW} = 0,\, S_{db} = 0 $
-                
-$ On \:\, iteration \:\, t $
-
-    compute dW, db on current mini-batch
-$
-\quad\:\: V_{dW} = \beta_{1}\,V_{dW} + (1-\,\beta_{1}\,)\,dW 
-\qquad\:\: V^{correct}_{dW} = \frac{V_{dW}}{(1-\beta_{1}^{t})} \\
-\quad\:\: V_{db} \:\,= \beta_{1}\,V_{db} \:\,+ (1-\,\beta_{1}\,)\,db 
-\qquad\:\:\:\:\, V^{correct}_{db} = \frac{V_{db}}{(1-\beta_{1}^{t})} \\
-$
-
-$
-\quad\:\: S_{dW} = \beta_{2}\,S_{dW} + (1-\,\beta_{2}\,)\,(dW)^{2} 
-\quad\:\: S^{correct}_{dW} = \frac{S_{dW}}{(1-\beta_{2}^{t})}\\
-\quad\:\: S_{db} \:\,= \beta_{2}\,S_{db} \:\,+ (1-\,\beta_{2}\,)\,(db)^{2} 
+$$ \,\\ 
+Set\:\, 
+V_{dW} = 0,\, V_{db} = 0,\, S_{dW} = 0,\, S_{db} = 0 \\
+On \:\, iteration \:\, t \\
+\, \\ \quad\:\:
+compute \;dW, \;db \;on \;current \;mini-batch \\
+\, \\ \quad\:\: 
+V_{dW} = \beta_{1}\,V_{dW} + (1-\,\beta_{1}\,)\,dW 
+\qquad\:\: V^{correct}_{dW} = \frac{V_{dW}}{(1-\beta_{1}^{t})} \\ \quad\:\: 
+V_{db} \:\,= \beta_{1}\,V_{db} \:\,+ (1-\,\beta_{1}\,)\,db 
+\qquad\:\:\:\:\, V^{correct}_{db} = \frac{V_{db}}{(1-\beta_{1}^{t})} \\ 
+\, \\ \quad\:\: 
+S_{dW} = \beta_{2}\,S_{dW} + (1-\,\beta_{2}\,)\,(dW)^{2} 
+\quad\:\: S^{correct}_{dW} = \frac{S_{dW}}{(1-\beta_{2}^{t})}\\ \quad\:\: 
+S_{db} \:\,= \beta_{2}\,S_{db} \:\,+ (1-\,\beta_{2}\,)\,(db)^{2} 
 \qquad S^{correct}_{db} = \frac{S_{db}}{(1-\beta_{2}^{t})} \\
-$
-         
-$
-\quad\:\: W = W - \alpha\, \frac{V^{correct}_{dW}}{\sqrt{S^{correct}_{dW}} + \epsilon} \\
-\quad\:\: b \:\,\,= b \:\:\,- \alpha\, \frac{V^{correct}_{db}}{\sqrt{S^{correct}_{db}} + \epsilon} $
+\, \\ \quad\:\: 
+W = W - \alpha\, \frac{V^{correct}_{dW}}{\sqrt{S^{correct}_{dW}} + \epsilon} \\ \quad\:\: 
+b \:\,\,= b \:\:\,- \alpha\, \frac{V^{correct}_{db}}{\sqrt{S^{correct}_{db}} + \epsilon} $$
 
 When use adam optimization, people usually just use default hyper parameter and try to tune only $\alpha$:
 - $\beta_{1}$ : 0.9

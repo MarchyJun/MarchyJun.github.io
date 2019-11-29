@@ -387,18 +387,18 @@ for k,v in parameters.items():
 
 After initializing parameters, we can calculate $ \hat{Y} $ that lie in output layer by matrix multiplication.
 
-$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
-  \: A^{[1]} \:= activate(Z^{[1]}) $$
+$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+  \: A^{[1]} \:= activate(Z^{[1]}) $
                 
-$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
-\quad\:\:\:\: = \hat{Y} $$
+\quad\:\:\:\: = \hat{Y} $
 
                     
 $$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
   \: A^{[1]} \:= activate(Z^{[1]}) $$
                 
-$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
 \quad\:\:\:\: = \hat{Y} $$
             

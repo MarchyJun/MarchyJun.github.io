@@ -1,3 +1,8 @@
+---
+layout: article
+title: NeuralNetwork - Learning Speed Problem
+mathjax: true
+---
 
 
 ```python
@@ -20,7 +25,7 @@ Even though we do vectorization, if the data size m is big, implementation of gr
 
 Let's split up our entire training set into smaller training set, which is called mini-batches. If we set mini-batch size as 1000 and our entire training data has size 10,000 , then our mini-batches will be like this: 
 
-![title](Images/minibatch.png)
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/minibatch.png)
 
 So, algorithm to do gradient descent with each mini batch $X^{\small\{t\small\}}, Y^{\small\{t\small\}}$ is called minibatch gradient descent rather than with entire 10000 training data, which is called batch gradient descent.
 
@@ -41,7 +46,7 @@ $ \quad\:\: W^{[l]} = W^{[l]} - \alpha dW^{[l]}\\
 
 All procedure to update parameters with 10 mini-batches is 1 epoch of training.
 
-![title](Images/GDcompare.png)
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/GDcompare.png)
 
 We can set variance mini-batch size:   
 - mini-batch size = m : batch gradient descent(BGD)
@@ -151,10 +156,12 @@ But since we set $V_{0} = 0$, our $V$ values start from very low values which is
 
 If there are 5 datas :
                 
-![title](Images/moveaverage1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/moveaverage1.png)
 
 $\beta\,$ is number between 0 and 1, and if $\beta\,$ becomes close to 1, it gives a lot of weight($\:\beta\:$) to the previous values and a much smaller weights($\:1-\beta\:$) to whatever we are seeing right now. So, at high value of $\beta$, exponentially weighted average adapts more slowly when the new data changes.
-![title](Images/moveaverage2.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/moveaverage2.png)
 
 ### Gradient Descent with Momentum
 
@@ -176,7 +183,9 @@ $
 
 In practice, people usually set $\beta_{1}$ as a number close to 0.9
 
-![title](Images/momentum.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/momentum.png)
+
 Let's say we computed above left gradients in the las few derivatives. Then on the vertical direction, gradients have opposite directions, so the average will be little bit close to 0. On the other hand, on the horizontal direction, all gradients are pointing to the right, so average will be big. Therefore, gradient descent with momentum ends up just taking steps that are much smaller oscillations, but are moving quickly in the horizontal direction.
 
 
@@ -210,7 +219,8 @@ def update_parameters_with_momentum(parameters, grads, v, beta1, learning_rate):
 ### Gradient Descent with Root Mean Square prop
 
 There is another algorithm called RMSprop, which can also speed up gradient descent. 
-![title](Images/rms1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/rms1.png)
 
 Let's consider above example. If we check the left image, we want to slow down our learning on vertical direction, while we want to speed up our learning on horizontal direction. So, if we update our parameters like this:
 
@@ -361,7 +371,8 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_41_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_41_1.png)
 
 
 Let's build neural network with 2/5/2/1
@@ -464,7 +475,8 @@ print('Spent time for training : {} sec'.format(gd_time))
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_46_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_46_1.png)
 
 
     Spent time for training : 24.979933261871338
@@ -503,7 +515,8 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_47_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_47_1.png)
 
 
 ### Mini-batch with Momentum
@@ -531,7 +544,8 @@ print('Spent time for training : {} sec'.format(momentum_time))
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_49_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_49_1.png)
 
 
     Spent time for training : 30.84908699989319 sec
@@ -570,7 +584,8 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_50_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_50_1.png)
 
 
 ### Mini-batch with RMSprop
@@ -597,7 +612,7 @@ print('Spent time for training : {} sec'.format(rms_time))
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_52_1.png)
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_52_1.png)
 
 
     Spent time for training : 32.749738931655884 sec
@@ -636,7 +651,8 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_53_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_53_1.png)
 
 
 ### Mini-batch with Adam
@@ -663,7 +679,8 @@ print('Spent time for training : {} sec'.format(adam_time))
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_55_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_55_1.png)
 
 
     Spent time for training : 41.99417805671692 sec
@@ -702,7 +719,8 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_56_1.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_56_1.png)
 
 
 ### Summary
@@ -744,7 +762,8 @@ result.style.set_properties(subset=["Optimization Method",'Train accuracy', 'Cos
 ```
 
 
-![png](NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_58_0.png)
+
+![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/NeuralNetwork_2.3_LearningSpeedProblem_58_0.png)
 
 
 

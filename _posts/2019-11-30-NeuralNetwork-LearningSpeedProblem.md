@@ -160,7 +160,7 @@ If there are 5 datas :
 
 ![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/moveaverage1.png)
 
-$\beta\,$ is number between 0 and 1, and if $\beta\,$ becomes close to 1, it gives a lot of weight($\:\beta\:$) to the previous values and a much smaller weights($\:1-\beta\:$) to whatever we are seeing right now. So, at high value of $\beta$, exponentially weighted average adapts more slowly when the new data changes.
+$\beta\,$ is number between 0 and 1, and if $\beta\,$ becomes close to 1, it gives a lot of weight($\,\beta\,$) to the previous values and a much smaller weights($\,1-\beta\,$) to whatever we are seeing right now. So, at high value of $\beta$, exponentially weighted average adapts more slowly when the new data changes.
 
 ![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/moveaverage2.png)
 
@@ -297,7 +297,7 @@ b \:\,\,= b \:\:\,- \alpha\, \frac{V^{correct}_{db}}{\sqrt{S^{correct}_{db}} + \
 When use adam optimization, people usually just use default hyper parameter and try to tune only $\alpha$:
 - $\beta_{1}$ : 0.9
 - $\beta_{2}$ : 0.999
-- $\epsilon\:\:$ : $10^{-8}$
+- $\epsilon\,\,$ : $10^{-8}$
 
 
 ```python

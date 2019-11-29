@@ -95,7 +95,6 @@ print('Train data Y shape:' + str(Y.shape))
 Let's consider we will use following neurl network structure and let's set network parameters corresponding to our network. 
 
 ![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
-#![title](Images/NN_image.png)
 
 
 ```python
@@ -153,7 +152,7 @@ These weights indicate how strongly nodes effect later nodes that the line ends 
 ### Vectorization
 
 ![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
-#![title](Images/NN_image.png)
+
 
 For i_th data, there are following calculation procedure:
 - [ 1 ] :  
@@ -290,7 +289,7 @@ plt.show()
 - step 2 : divide each standard deviation. So, x1, x2 will have same standard dievation = 1
 
 ![png](NeuralNetwork_1.1_BasicProcedure_files/normalize.png)
-#![title](Images/normalize.png)
+
 
 If we use unnormalized input features, it is more likely that our cost function will be very elongated function. It means we have to use very small learning rate. Whereas if we normalize the features, then our cost function will be more symmetric. It means wherever we strart, gradient descent can pretty much go straight to the minimum. So we can take much larger steps with gradient descent.
 
@@ -681,13 +680,13 @@ In order to Gradient Descent to work, we must choose the learning rate wisely. T
 To do gradient optimization, we need to get gradient of the cost function with respect to w and b. We can get gradient of each parameter by using chain rule.
 
 ![png](NeuralNetwork_1.1_BasicProcedure_files/graph.png)
-#![title](Images/graph.png)
+
 
 Let's calculate gradient.             
 
 
 ![png](NeuralNetwork_1.1_BasicProcedure_files/vectorization.png)
-#![title](Images/vectorization.png)
+
 
 
 ```python

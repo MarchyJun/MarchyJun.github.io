@@ -465,13 +465,12 @@ result.style.set_properties(subset=["Model",'Train accuracy', 'Problem/Comment']
 
 ![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_33_0.png)
 
-|---
-| Model | Train accuracy | Problem / Comment 
-|-|:-|:-:|-:
-| 2/3/1 NN with zero initialization | 0.5 | fails to break symmetry
-| 2/3/1 NN with large random initialization |0.742 | too large weights
-| 2/3/1 NN with appropriate small initialization |0.924 | recommended method
-|---
+
+| Model                                          | Train accuracy | Problem / Comment       |
+|------------------------------------------------|----------------|-------------------------|
+| 2/3/1 NN with zero initialization              | 0.5            | fails to break symmetry |
+| 2/3/1 NN with large random initialization      | 0.742          | too large weights       |
+| 2/3/1 NN with appropriate small initialization | 0.924          | recommended method      |
 
 <style  type="text/css" >
     #T_6c8cc518_94f9_11e9_bea6_38f9d34d80a9row0_col0 {

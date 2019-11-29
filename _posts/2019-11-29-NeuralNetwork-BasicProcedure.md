@@ -94,8 +94,7 @@ print('Train data Y shape:' + str(Y.shape))
 
 Let's consider we will use following neurl network structure and let's set network parameters corresponding to our network. 
 
-![Image](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
-![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
+![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.PNG)
 
 
 ```python
@@ -152,7 +151,7 @@ These weights indicate how strongly nodes effect later nodes that the line ends 
 
 ### Vectorization
 
-![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
+![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.PNG)
 
 
 For i_th data, there are following calculation procedure:

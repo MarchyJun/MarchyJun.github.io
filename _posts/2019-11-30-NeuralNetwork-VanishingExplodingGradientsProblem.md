@@ -68,8 +68,8 @@ Z^{[l]}_{1} = W^{[l]}Z^{[l-1]} \\ \quad\:\:
             = W^{[l]}_{1}Z^{[l-1]}_{1} + W^{[l]}_{2}Z^{[l-1]}_{2} + \dots + W^{[l]}_{n^{[l-1]}}Z^{[l-1]}_{n^{[l-1]}} $$
                 
 So, if $n^{[l-1]}$ is big(= have many neurons), then since $Z^{[l]}$ is sum of $n^{[l-1]}$ terms, it has high probability to explode or diminish. So, we want to set $W^{[l]}$ to be small. We can do this by add some terms in our random initialization.
-$$ \, \\
-W^{[l]}$ = random_initialization * $\sqrt{V(W^{[l]})} $$
+
+$W^{[l]}$ = random_initialization * $\sqrt{V(W^{[l]})} $
 - Relu activation : $V(W^{[l]}) = \frac{2}{n^{[l-1]}} $
 - tanh activation :  $V(W^{[l]}) = \frac{1}{n^{[l-1]}} $
      

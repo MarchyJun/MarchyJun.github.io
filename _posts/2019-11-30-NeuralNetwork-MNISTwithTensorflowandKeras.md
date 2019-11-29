@@ -1,4 +1,8 @@
-
+---
+layout: article
+title: NeuralNetwork - Fashion-MNIST with Tensorflow and Keras
+mathjax: true
+---
 
 ```python
 import tensorflow as tf
@@ -172,9 +176,7 @@ plt.grid(False)
 plt.show()
 
 ```
-
-
-![png](NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_20_0.png)
+![Image](/assets/images/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_20_0.png)
 
 
 
@@ -206,7 +208,7 @@ plt.show()
 ```
 
 
-![png](NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_23_0.png)
+![Image](/assets/images/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_23_0.png)
 
 
 # Data Preprocessing
@@ -330,7 +332,7 @@ plt.show()
 ```
 
 
-![png](NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_40_0.png)
+![Image](/assets/images/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_40_0.png)
 
 
 # Neural Network Modeling
@@ -589,8 +591,7 @@ root_logdir = 'tf_logs'
 logdir = "{}/test/run-{}".format(root_logdir, now)
 file_writer = tf.summary.FileWriter(logdir, tf.get_default_graph())
 ```
-
-![tensorboard of test case](Images/tensorboard_of_test.png)
+![Image](/assets/images/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/tensorboard_of_test.png)
 
 ### Modeling
 
@@ -716,7 +717,7 @@ parameters = model(X_train = train_images, Y_train = train_labels, X_test = test
 
 
 
-![png](NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_69_1.png)
+![Image](/assets/images/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_files/NeuralNetwork_3.1_MNISTwithTensorflowandKeras_69_1.png)
 
 
     Parameters have been trained

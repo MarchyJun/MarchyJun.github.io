@@ -1,4 +1,8 @@
-
+---
+layout: article
+title: Document - Writing Posts
+mathjax: true
+---
 
 ```python
 import numpy as np

@@ -77,7 +77,7 @@ plt.show()
 
 ```
 
-![image](assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_12_0.png)
+![image](/assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_12_0.png)
 
 
 ```python

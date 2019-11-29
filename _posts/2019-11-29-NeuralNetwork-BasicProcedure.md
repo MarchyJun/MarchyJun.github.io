@@ -214,18 +214,18 @@ $\quad\quad\quad\:\, = W^{[2]}A^{[1]} + b^{[2]} : [1,3][3,m] + [3,1] = [1,m]$
 
 $\quad\:\:\,\, A^{[2]} = \begin{bmatrix} a^{[2](1)}_{1} & a^{[2](2)}_{1} & \dots & a^{[2](m)}_{1} \end{bmatrix} $
                                         
-$$\qquad\quad\:\: = activate(Z^{[2]})$$
+$ \qquad\quad\:\: = activate(Z^{[2]})$
                                        
                                        
 
 To summarize,           
                     
-$$\ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
-  \: A^{[1]} \:= activate(Z^{[1]}) $$
+$ \ Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+  \: A^{[1]} \:= activate(Z^{[1]}) $
                 
-$$\ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+$ \ Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
-\quad\:\:\:\: = \hat{Y} $$
+\quad\:\:\:\: = \hat{Y} $
 
 # 3. Normalizing inputs
 

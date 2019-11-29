@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Document - Writing Posts
+title: NeuralNetwork - Basic Procedure
 mathjax: true
 ---
 
@@ -156,40 +156,40 @@ These weights indicate how strongly nodes effect later nodes that the line ends 
 
 For i_th data, there are following calculation procedure:
 - [ 1 ] :  
-$ Let \:\: w^{[1]}_1 = \begin{bmatrix} w^{[1]}_{11} \\ w^{[1]}_{21} \end{bmatrix}, \: w^{[1]}_2 = \begin{bmatrix} w^{[1]}_{12} \\ w^{[1]}_{22} \end{bmatrix}, \: 
+$$ Let \:\: w^{[1]}_1 = \begin{bmatrix} w^{[1]}_{11} \\ w^{[1]}_{21} \end{bmatrix}, \: w^{[1]}_2 = \begin{bmatrix} w^{[1]}_{12} \\ w^{[1]}_{22} \end{bmatrix}, \: 
                                      w^{[1]}_3 = \begin{bmatrix} w^{[1]}_{13} \\ w^{[1]}_{23} \end{bmatrix}\\
        Then \:\: z^{[1](i)}_{1} = x^{(i)}_{1}w^{[1]}_{11} + x^{(i)}_{2}w^{[1]}_{21} + b^{[1]}_{1} \\
        \qquad\qquad\,  = \begin{bmatrix} w^{[1]}_{11} & w^{[1]}_{21}\end{bmatrix}\begin{bmatrix} x^{(i)}_{1} \\ x^{(i)}_{2} \end{bmatrix} + b^{[1]}_{1} \\
        \qquad\qquad\,  = w^{[1]T}_1X^{(i)} + b^{[1]}_{1} \qquad\qquad\qquad and \:\:\:\, a^{[1](i)}_{1} = activate(z^{[1](i)}_{1}) \\
            \qquad\: z^{[1](i)}_{2} = w^{[1]T}_{2}X^{(i)} + b^{[1]}_{2} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{2} = activate(z^{[1](i)}_{2})\\
-           \qquad\: z^{[1](i)}_{3} = w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{3} = activate(z^{[1](i)}_{3})$
+           \qquad\: z^{[1](i)}_{3} = w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{3} = activate(z^{[1](i)}_{3}) $$
       
       
 - [ 2 ] :         
-$\ Let \:\: w^{[2]}_1 = \begin{bmatrix} w^{[2]}_{11} \\ w^{[2]}_{21} \\ w^{[2]}_{31} \end{bmatrix} \\
+$$\ Let \:\: w^{[2]}_1 = \begin{bmatrix} w^{[2]}_{11} \\ w^{[2]}_{21} \\ w^{[2]}_{31} \end{bmatrix} \\
         Then \:\: z^{[2](i)}_{1} = a^{[1](i)}_{1}w^{[2]}_{11} + a^{[1](i)}_{2}w^{[2]}_{21} + a^{[1](i)}_{3}w^{[2]}_{31} + b^{[2]}_{1} \\
        \qquad\qquad\,  = \begin{bmatrix} w^{[2]}_{11} & w^{[2]}_{21} & w^{[2]}_{31} \end{bmatrix}\begin{bmatrix} a^{[1](i)}_{1} \\ a^{[1](i)}_{2} \\ a^{[3](i)}_{3} \end{bmatrix} + b^{[2]}_{1} \\
-       \qquad\qquad\,  = w^{[2]T}_1a^{[1](i)} + b^{[2]}_{1} \qquad\qquad\qquad and \:\:\:\, a^{[2](i)}_{1} = activate(z^{[2](i)}_{1}) $
+       \qquad\qquad\,  = w^{[2]T}_1a^{[1](i)} + b^{[2]}_{1} \qquad\qquad\qquad and \:\:\:\, a^{[2](i)}_{1} = activate(z^{[2](i)}_{1}) $$
 
 Let's vectorize above procedure
 
 - [ 1 ] :                      
-$\ Let \:\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1])\\          
+$$\ Let \:\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1])\\          
 \:\: Then \:\:\: z^{[1](i)} = \begin{bmatrix} z^{[1](i)}_{1} \\ z^{[1](i)}_{2} \\ z^{[1](i)}_{3} \end{bmatrix}
-                         = \begin{bmatrix} w^{[1]T}_{1}X^{(i)} + b^{[1]}_{1} \\ w^{[1]T}_{2}X^{(i)} + b^{[1]}_{2} \\ w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \end{bmatrix} = W^{[1]}X^{(i)} + b^{[1]} \quad and \:\:\: a^{[1](i)} = \begin{bmatrix} a^{[1](i)}_{1} \\ a^{[1](i)}_{2} \\ a^{[1](i)}_{3} \end{bmatrix} = \begin{bmatrix} activate(z^{[1](i)}_{1}) \\ activate(z^{[1](i)}_{2}) \\ activate(z^{[1](i)}_{3}) \end{bmatrix} = activate(z^{[1](i)}) $
+                         = \begin{bmatrix} w^{[1]T}_{1}X^{(i)} + b^{[1]}_{1} \\ w^{[1]T}_{2}X^{(i)} + b^{[1]}_{2} \\ w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \end{bmatrix} = W^{[1]}X^{(i)} + b^{[1]} \quad and \:\:\: a^{[1](i)} = \begin{bmatrix} a^{[1](i)}_{1} \\ a^{[1](i)}_{2} \\ a^{[1](i)}_{3} \end{bmatrix} = \begin{bmatrix} activate(z^{[1](i)}_{1}) \\ activate(z^{[1](i)}_{2}) \\ activate(z^{[1](i)}_{3}) \end{bmatrix} = activate(z^{[1](i)}) $$
                          
 - [ 2 ] :                                  
-$\ \\
-Likewise, \:\:\: z^{[2](i)} = W^{[2]}X^{(i)} + b^{[2]} \quad and \:\:\: a^{[2](i)} = activate(z^{[2](i)}) $
+$$\ \\
+Likewise, \:\:\: z^{[2](i)} = W^{[2]}X^{(i)} + b^{[2]} \quad and \:\:\: a^{[2](i)} = activate(z^{[2](i)}) $$
 
-Since there are m data points, we have to do above procedure m times if we don't vectorize. So, let's vectorize all 1, 2, ... , $\ m_{th}$ procedure. 
+Since there are m data points, we have to do above procedure m times if we don't vectorize. So, let's vectorize all 1, 2, ... , $$\ m_{th}$ procedure. 
 
 - [ 1 ] :                
-$Let \:\: X = \begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix}\,(shape = [2, m]), \:\:\: and\:\: we\:\: have\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1]) \\ 
+$$ Let \:\: X = \begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix}\,(shape = [2, m]), \:\:\: and\:\: we\:\: have\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1]) \\ 
 \qquad \\
 Z^{[1]} = \begin{bmatrix} z^{[1](1)}_{1} & z^{[1](2)}_{1} & \dots & z^{[1](m)}_{1} \\
                                         z^{[1](1)}_{2} & z^{[1](2)}_{2} & \dots & z^{[1](m)}_{2} \\
-                                        z^{[1](1)}_{3} & z^{[1](2)}_{3} & \dots & z^{[1](m)}_{3} \end{bmatrix} $
+                                        z^{[1](1)}_{3} & z^{[1](2)}_{3} & \dots & z^{[1](m)}_{3} \end{bmatrix} $$
                 
 $\quad\quad\quad\: = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix} $
                 

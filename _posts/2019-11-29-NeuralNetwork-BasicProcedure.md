@@ -598,7 +598,7 @@ $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = -[Y^{(i)}\,log\hat{Y}^{(i)} + (1-Y^{(i)})\,log(1
     - If $$\ Y^{(i)} = 0 $$: $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = - log(1-\hat{Y}^{(i)}) $$ <- We want $$\ log(1-\hat{Y}^{(i)}) $$ to be large, which means $$\hat{Y}^{(i)} $$ have to be small.
 
 While loss function measures how well our model is doing on each single example, Cost function measures how well our model is doing on entire training set. That is, we use cost functions to aggregate all losses from each single training example into a single measure of the model's predictive performance.           
-$$ \\
+$$ \,\\
 J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $$
 
 

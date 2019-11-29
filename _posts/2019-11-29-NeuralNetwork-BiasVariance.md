@@ -8,7 +8,7 @@ mathjax: true
 # Bias Variance Trade-off
 
 In machine learning and deep learning, we can check the performance of our models by bias and variance. Let's consider the cost function MSE that is commonly used in the regression problem. MSE is one cost function that is used to measure our model performance, and it can be decomposed as bias term and variance term.         
-$$ //
+$$ \\
 MSE = \frac{1}{n} \sum_{i=1}^{n} (Y_{i} - \hat{Y_{i}})^{2} \\ \qquad\:\: 
     = E[(Y - \hat{Y})^{2}] = Var(\hat{Y}) + Bias(\hat{Y})^{2} + Var(e) $$
 

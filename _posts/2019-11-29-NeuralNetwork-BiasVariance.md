@@ -1,4 +1,8 @@
-
+---
+layout: article
+title: NeuralNetwork - Bias & Variance
+mathjax: true
+---
 
 
 # Bias Variance Trade-off

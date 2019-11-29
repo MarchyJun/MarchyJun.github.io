@@ -182,7 +182,7 @@ $$\ \\
 Likewise, \:\:\: z^{[2](i)} = W^{[2]}X^{(i)} + b^{[2]} \quad and \:\:\: a^{[2](i)} = activate(z^{[2](i)}) $$
 
 Since there are m data points, we have to do above procedure m times if we don't vectorize. So, let's vectorize all 1, 2, ... , $$\ m_{th}$$ procedure. 
-
+ 
 - [ 1 ] :                
 $$Let \:\: X = \begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix}\,(shape = [2, m]), \:\:\: and\:\: we\:\: have\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\,(shape = [3,2]), \:\:\: b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix}\,(shape = [3,1]) \\ 
 \qquad \\

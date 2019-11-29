@@ -436,18 +436,16 @@ for k,v in parameters.items():
 ### Activate function
 
 After initializing parameters, we can calculate $ \hat{Y} $ that lie in output layer by matrix multiplication.
-
 $$ 
 Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
 A^{[1]} = activate(Z^{[1]}) \\
 Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
 A^{[2]} = activate(Z^{[2]}) \\ \quad\:\:\: 
-        = \hat{Y}  $$
+        = \hat{Y} $$
             
 The remaining thing  is to choose which actiate function to use.
 
 There are many activate functions that is non-linear. If we do not use non-linear activate functions, then our model is just computing $\hat{Y}$ as a linear function of our input features.
-
 $$
 Z^{[1]} = W^{[1]}X + b^{[1]} \\            
 A^{[1]} = Z^{[1]} \\               
@@ -493,8 +491,6 @@ for k,v in activate_function.items():
 
 
 ![image](/assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
-
-
 $$ 
 1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}} \\   
 2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} \\       
@@ -602,7 +598,6 @@ $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = -[Y^{(i)}\,log\hat{Y}^{(i)} + (1-Y^{(i)})\,log(1
     - If $$\ Y^{(i)} = 0 $$: $$\ L(\hat{Y}^{(i)}, Y^{(i)}) = - log(1-\hat{Y}^{(i)}) $$ <- We want $$\ log(1-\hat{Y}^{(i)}) $$ to be large, which means $$\hat{Y}^{(i)} $$ have to be small.
 
 While loss function measures how well our model is doing on each single example, Cost function measures how well our model is doing on entire training set. That is, we use cost functions to aggregate all losses from each single training example into a single measure of the model's predictive performance.           
-
 $$ 
 J(w, b) = \frac{1}{m} \sum_{i=1}^m L(\hat{Y}^{(i)}, Y^{(i)}) $$
 

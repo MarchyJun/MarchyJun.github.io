@@ -10,46 +10,52 @@ mathjax: true
 
 # Vanishing & Exploding Gradients Problem
 
-One of the problems of training very deep neural networks is vanishing and exploding gradients. This means that when we are training a very deep network, our derivatives can sometimes get either very big or very small, and this makes training difficult. Let's consider following deep network without b. For the sake of simplicity, let's say we using linear activation function.
+One of the problems of training very deep neural networks is vanishing and exploding gradients. This means that when we are training a very deep network, our derivatives can sometimes get either very big or very small, and this makes training difficult. 
 
 ![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/deep.png)
 
-
-$dZ^{[L]} \\
- dW^{[L]} = dZ^{[L]}Z^{[L-1]} \\
- \qquad\:\: = dZ^{[L]}W^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\
- $
-             
-$dZ^{[L-1]} \:\, = dZ^{[L]}W^{[L]}\\
- dW^{[L-1]} = dZ^{[L-1]}Z^{[L-2]} \\
- \qquad\:\:\:\:\:\, = dZ^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\
- \qquad\:\:\:\:\:\, = dZ^{[L]}W^{[L]}W^{[L-2]} \dots W^{[1]}X \\
- $
-
-$dZ^{[L-2]} \:\, = dZ^{[L-1]}W^{[L-1]}\\
- dW^{[L-2]} = dZ^{[L-2]}Z^{[L-3]} \\
- \qquad\:\:\:\:\:\, = dZ^{[L-2]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\
- \qquad\:\:\:\:\:\, = dZ^{[L-1]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\
- \qquad\:\:\:\:\:\, = dZ^{[L]}W^{[L]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ 
- $
-
-$dW^{[l]} = dZ^{[L]}W^{[L]}W^{[L-1]} \dots W^{[l+1]}W^{[l-1]}W^{[l-2]} \dots W^{[1]}X \\ 
-\qquad\,  = dZ^{[L]}\prod_{i=1,\neq l}^{L}W^{[i]}
-$
- 
-
-$ So,\: if \:\: W^{[l]} = \begin{bmatrix} 1.5 & 0 \\ 0 & 1.5 \end{bmatrix} > I \:\: for\: l = 1 \dots L,\: then\: dW^{[l]} = dZ^{[L]} \begin{bmatrix} 1.5^{L-2} & 0 \\ 0 & 1.5^{L-2}\end{bmatrix} W^{[1]}X \\
-$                    
+Let's consider above deep network without b. For the sake of simplicity, let's say we using linear activation function.
+$$ /, //
+dZ^{[L]} \\
+dW^{[L]} = dZ^{[L]}Z^{[L-1]} \\ \qquad\:\: 
+         = dZ^{[L]}W^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\
+\, \\        
+dZ^{[L-1]} \:\, = dZ^{[L]}W^{[L]} \\
+dW^{[L-1]} = dZ^{[L-1]}Z^{[L-2]} \\ \qquad\:\:\:\:\:\, 
+           = dZ^{[L-1]}W^{[L-2]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\, 
+           = dZ^{[L]}W^{[L]}W^{[L-2]} \dots W^{[1]}X \\
+\, \\
+dZ^{[L-2]} \:\, = dZ^{[L-1]}W^{[L-1]} \\
+dW^{[L-2]} = dZ^{[L-2]}Z^{[L-3]} \\ \qquad\:\:\:\:\:\, 
+           = dZ^{[L-2]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\, 
+           = dZ^{[L-1]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ \qquad\:\:\:\:\:\, 
+           = dZ^{[L]}W^{[L]}W^{[L-1]}W^{[L-3]}W^{[L-4]} \dots W^{[1]}X \\ 
+\, \\
+dW^{[l]} = dZ^{[L]}W^{[L]}W^{[L-1]} \dots W^{[l+1]}W^{[l-1]}W^{[l-2]} \dots W^{[1]}X \\  \qquad\,  
+         = dZ^{[L]}\prod_{i=1,\neq l}^{L}W^{[i]} \\ 
+\, \\
+So,\: if \:\: 
+W^{[l]} = \begin{bmatrix} 1.5 & 0 \\ 
+                          0 & 1.5 \end{bmatrix} > I \:\: 
+for\: l = 1 \dots L,\: then\: 
+dW^{[l]} = dZ^{[L]} 
+           \begin{bmatrix} 1.5^{L-2} & 0 \\ 
+                           0         & 1.5^{L-2}\end{bmatrix} 
+           W^{[1]}X $$                    
 
 It shows gradients $dW^{[l]}$ will explode exponentially.
-
-$ Also,\: if \:\: W^{[l]} = \begin{bmatrix} 0.5 & 0 \\ 0 & 0.5 \end{bmatrix} < I \:\: for\: l = 1 \dots L,\: then\: dW^{[l]} = dZ^{[L]} \begin{bmatrix} 0.5^{L-2} & 0 \\ 0 & 0.5^{L-2}\end{bmatrix} W^{[1]}X \\
-$ 
+$$ \, \\ 
+Also,\: if \:\: 
+W^{[l]} = \begin{bmatrix} 0.5 & 0 \\ 
+                          0   & 0.5 \end{bmatrix} < I \:\: 
+for\: l = 1 \dots L,\: then\: 
+dW^{[l]} = dZ^{[L]} 
+           \begin{bmatrix} 0.5^{L-2} & 0 \\ 
+                           0         & 0.5^{L-2}\end{bmatrix} 
+           W^{[1]}X $$ 
               
 It shows gradients $dW^{[l]}$ will vanish exponentially.
                   
-
-
 # Initialization Methods for Vanishing & Exploding Gradients Problem
 
 It turns out that a partial solution to above vanishing & exploding gradient problem is more careful choice of the random initialization for our neural network.

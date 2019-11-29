@@ -189,17 +189,17 @@ $$ Let \:\: X = \begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix}
 \qquad \\
 Z^{[1]} = \begin{bmatrix} z^{[1](1)}_{1} & z^{[1](2)}_{1} & \dots & z^{[1](m)}_{1} \\
                                         z^{[1](1)}_{2} & z^{[1](2)}_{2} & \dots & z^{[1](m)}_{2} \\
-                                        z^{[1](1)}_{3} & z^{[1](2)}_{3} & \dots & z^{[1](m)}_{3} \end{bmatrix} $$ 
+                                        z^{[1](1)}_{3} & z^{[1](2)}_{3} & \dots & z^{[1](m)}_{3} \end{bmatrix} \\ 
+               
+\quad\quad\quad\: = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix} \\
                 
-$$\quad\quad\quad\: = \begin{bmatrix} --w^{[1]T}_{1}-- \\ --w^{[1]T}_{2}-- \\ --w^{[1]T}_{3}-- \end{bmatrix}\begin{bmatrix} X^{(1)} & X^{(2)} & \dots & X^{(m)}\end{bmatrix} + \begin{bmatrix} b^{[1]}_{1} \\ b^{[1]}_{2} \\ b^{[1]}_{3} \end{bmatrix} $$
-                
-$$\quad\quad\quad\: = W^{[1]}X + b^{[1]} : [3,2][2,m] + [3,1] = [3,m] $$
+\quad\quad\quad\: = W^{[1]}X + b^{[1]} : [3,2][2,m] + [3,1] = [3,m] \\
                    
-$$\quad\:\: A^{[1]} = \begin{bmatrix} a^{[1](1)}_{1} & a^{[1](2)}_{1} & \dots & a^{[1](m)}_{1} \\
+\quad\:\: A^{[1]} = \begin{bmatrix} a^{[1](1)}_{1} & a^{[1](2)}_{1} & \dots & a^{[1](m)}_{1} \\
                                               a^{[1](1)}_{2} & a^{[1](2)}_{2} & \dots & a^{[1](m)}_{2} \\
-                                              a^{[1](1)}_{3} & a^{[1](2)}_{3} & \dots & a^{[1](m)}_{3} \end{bmatrix} $$
+                                              a^{[1](1)}_{3} & a^{[1](2)}_{3} & \dots & a^{[1](m)}_{3} \end{bmatrix} \\
                                         
-$$\qquad\quad\: = activate(Z^{[1]})$$
+\qquad\quad\: = activate(Z^{[1]})$$
                  
                  
 - [ 2 ] :                     
@@ -221,10 +221,10 @@ $$\qquad\quad\:\: = activate(Z^{[2]}) $$
 
 To summarize,           
                     
-$$\Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
+$$Z^{[1]} = W^{[1]}A^{[0]} + b^{[1]} \:\: ( A^{[0]} = X ) \\
   \: A^{[1]} \:= activate(Z^{[1]}) $$
                 
-$$\Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
+$$Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]} \\
   \: A^{[2]} \:= activate(Z^{[2]}) \\
 \quad\:\:\:\: = \hat{Y} $$
 

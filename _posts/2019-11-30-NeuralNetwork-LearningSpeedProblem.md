@@ -235,7 +235,7 @@ S_{db} \:\,= \beta_{2}\,S_{db} \:\,+ (1-\,\beta_{2}\,)\,(db)^{2} \\
 W = W - \alpha\, \frac{dW}{\sqrt{S_{dW}} + \epsilon} \\ \quad\:\: 
 b \:\,\,= b \:\:\,- \alpha\, \frac{db}{\sqrt{S_{db}} + \epsilon} $$
 
-$\epsilon\:$ is for making our algorithm do not divide $dW$ and $db$ by 0. People usually set $\epsilon$ as $10^{-8}$
+$\epsilon\,$ is for making our algorithm do not divide $dW$ and $db$ by 0. People usually set $\epsilon$ as $10^{-8}$
 
 If we check above image, function is sloped much more steeply in the vertical direction than in the horizontal direction:
 - $db$ is relatively large. Since our update in vertical direction is divided by $db$ which is relatively large number, it helps slow down the learning in the b direction.
@@ -297,7 +297,7 @@ b \:\,\,= b \:\:\,- \alpha\, \frac{V^{correct}_{db}}{\sqrt{S^{correct}_{db}} + \
 When use adam optimization, people usually just use default hyper parameter and try to tune only $\alpha$:
 - $\beta_{1}$ : 0.9
 - $\beta_{2}$ : 0.999
-- $\epsilon\,\,$ : $10^{-8}$
+- $\epsilon\,\,\,$ : $10^{-8}$
 
 
 ```python

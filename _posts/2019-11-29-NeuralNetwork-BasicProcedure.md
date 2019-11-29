@@ -196,7 +196,6 @@ $$ Let \:\:\: W^{[1]} = \begin{bmatrix} --w^{[1]T}_{1}-- \\
              b^{[1]} = \begin{bmatrix} b^{[1]}_{1} \\ 
                                        b^{[1]}_{2} \\ 
                                        b^{[1]}_{3} \end{bmatrix} \, (shape = [3,1]) \\  \:\: 
-
 Then \:\:\: z^{[1](i)} = \begin{bmatrix} z^{[1](i)}_{1} \\ 
                                         z^{[1](i)}_{2} \\ 
                                         z^{[1](i)}_{3} \end{bmatrix}

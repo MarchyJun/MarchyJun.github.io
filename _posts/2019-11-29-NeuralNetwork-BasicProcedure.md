@@ -28,7 +28,7 @@ warnings.filterwarnings('ignore')
 - Hidden layers: All layers that are not input or output layers are called hidden layers.     
 
 ### Hidden layers
-
+ 
 They are called hidden layers because, while the inputs and outputs correspond to visible things that happend in the world, and they can be stored as data, the values in the hidden layer aren't something we have data about, or anything we observe directly from the world. Each node in the hidden layer represents an aggregation of information from our input data, and each node adds to the model's abiliy to capture interactions. So the more nodes we have, the more interactions we can capture. In other words, they internally build up representations of the patterns in the data that are useful for making predictions. And they find increasingly complex patterns as we go through successive hidden layers of the network. In this way, neural networks partially replace the need for feature engineering, or manually creating better predictive features. Deep larning is also sometimes called representation learning, because subsequent layers build increasingly sophisticated representations of the raw data, until we ge to a stage where we can make predictions.
 
 ### The number of nodes and layers

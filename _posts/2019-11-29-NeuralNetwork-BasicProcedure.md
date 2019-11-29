@@ -94,6 +94,7 @@ print('Train data Y shape:' + str(Y.shape))
 
 Let's consider we will use following neurl network structure and let's set network parameters corresponding to our network. 
 
+![Image](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
 ![png](NeuralNetwork_1.1_BasicProcedure_files/NN_image.png)
 
 

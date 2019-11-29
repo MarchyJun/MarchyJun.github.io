@@ -28,8 +28,8 @@ Let's split up our entire training set into smaller training set, which is calle
 ![Image](/assets/images/NeuralNetwork_2.3_LearningSpeedProblem_files/minibatch.png)
 
 So, algorithm to do gradient descent with each mini batch $X^{\small\{t\small\}}, Y^{\small\{t\small\}}$ is called minibatch gradient descent rather than with entire 10000 training data, which is called batch gradient descent.
-
-$$ For \;t \;from \;1 \;to \;10
+$$ \,\\
+For \;t \;from \;1 \;to \;10
 \,\\ \quad\:\: 
 Z^{[1]} = W^{[1]}X^{\small\{t\small\}} + b^{[l]} \\ \quad\:\: 
 A^{[1]} = g^{[1]}(Z^{[1]}) \\ \quad\:\: 

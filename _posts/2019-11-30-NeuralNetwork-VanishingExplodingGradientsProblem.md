@@ -1,4 +1,8 @@
-
+---
+layout: article
+title: NeuralNetwork - Vanishing and Exploding Gradients Problem
+mathjax: true
+---
 
 ```python
 %run NeuralNetwork_functions.ipynb
@@ -8,7 +12,8 @@
 
 One of the problems of training very deep neural networks is vanishing and exploding gradients. This means that when we are training a very deep network, our derivatives can sometimes get either very big or very small, and this makes training difficult. Let's consider following deep network without b. For the sake of simplicity, let's say we using linear activation function.
 
-![title](Images/deep.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/deep.png)
+
 
 $dZ^{[L]} \\
  dW^{[L]} = dZ^{[L]}Z^{[L-1]} \\
@@ -49,7 +54,7 @@ It shows gradients $dW^{[l]}$ will vanish exponentially.
 
 It turns out that a partial solution to above vanishing & exploding gradient problem is more careful choice of the random initialization for our neural network.
 
-![title](Images/deep2.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/deep2.png)
 
 Let's consider above simple network. 
 
@@ -102,7 +107,7 @@ parameters_zero = nn_model(X, Y, [2,3,1], initialization_method = 'zero', hidden
 
 
 
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_13_1.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_13_1.png)
 
 
 
@@ -138,7 +143,7 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_14_1.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_14_1.png)
 
 
 The model's performace is very bad. If we check the prediction, then the model is predicting 0 for every example.        
@@ -250,7 +255,7 @@ parameters_random_big = nn_model_howbig(X, Y, [2,3,1], initialization_method = '
 
 
 
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_21_1.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_21_1.png)
 
 
 The cost starts very high, this is because initialized weights are very big. With these big weights, our first outputs will be very close to 0 or 1 for some examples and it cause very high losses. Also, if we compare with following small weights, we can see that optimization rarely occures. This is due to high initialized weights, which result in vanishing gradients.
@@ -287,8 +292,7 @@ plt.show()
     -------------------------------------
 
 
-
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_23_1.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_23_1.png)
 
 
 As we can see in the above example, initializing weights to very large random values does not work well, and initializing with small random values does better.
@@ -384,7 +388,7 @@ parameters_random_approp = nn_model_approp(X, Y, [2,3,1],  hidden_activation = '
 
 
 
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_30_1.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_30_1.png)
 
 
 
@@ -420,7 +424,7 @@ plt.show()
 
 
 
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_31_1.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_31_1.png)
 
 
 ### Summary
@@ -459,7 +463,7 @@ result.style.set_properties(subset=["Model",'Train accuracy', 'Problem/Comment']
 ```
 
 
-![png](NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_33_0.png)
+![Image](/assets/images/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_files/NeuralNetwork_2.2_VanishingExplodingGradientsProblem_33_0.png)
 
 
 

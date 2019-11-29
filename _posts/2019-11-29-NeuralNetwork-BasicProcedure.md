@@ -144,8 +144,8 @@ for i in range(len(layer_dims)):
 ### Weights and bias
 
 There are weights and bias that we have to optimize later in each layer except for input layer.          
-- First Hidden layer: There are weights and bias at first hidden layer. Since [ 1 ] indicates this hidden layer by above number notation, let's denote weights and bias corresponding to this hidden layer as $\ w^{[1]}, b^{[1]}.$
-- Output layer: There are weights and bias at output layer. Since [ 2 ] indicates this output layer by above number notation, let's denote weights and bias corresponding to this output layer as $\ w^{[2]}, b^{[2]}.$ 
+- First Hidden layer: There are weights and bias at first hidden layer. Since [ 1 ] indicates this hidden layer by above number notation, let's denote weights and bias corresponding to this hidden layer as $$ w^{[1]}, b^{[1]}. $$
+- Output layer: There are weights and bias at output layer. Since [ 2 ] indicates this output layer by above number notation, let's denote weights and bias corresponding to this output layer as $$ w^{[2]}, b^{[2]}. $$ 
               
 These weights indicate how strongly nodes effect later nodes that the line ends at.
 

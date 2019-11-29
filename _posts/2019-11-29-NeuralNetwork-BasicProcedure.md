@@ -156,7 +156,7 @@ These weights indicate how strongly nodes effect later nodes that the line ends 
 For i_th data, there are following calculation procedure:
 For i_th data, there are following calculation procedure:
 - [ 1 ] :  
-$ Let\:\: w^{[1]}_1 = \begin{bmatrix} w^{[1]}_{11} \\ 
+$$ Let\:\: w^{[1]}_1 = \begin{bmatrix} w^{[1]}_{11} \\ 
                                       w^{[1]}_{21} \end{bmatrix}, 
         \: w^{[1]}_2 = \begin{bmatrix} w^{[1]}_{12} \\ 
                                        w^{[1]}_{22} \end{bmatrix}, 
@@ -170,7 +170,7 @@ Then\:\: z^{[1](i)}_{1} = x^{(i)}_{1}w^{[1]}_{11} + x^{(i)}_{2}w^{[1]}_{21} + b^
                           + b^{[1]}_{1} \\ \qquad\qquad\,  
                         = w^{[1]T}_1X^{(i)} + b^{[1]}_{1} \qquad\qquad\qquad and\:\:\:\, a^{[1](i)}_{1} = activate(z^{[1](i)}_{1}) \\ \qquad\: 
            z^{[1](i)}_{2} = w^{[1]T}_{2}X^{(i)} + b^{[1]}_{2} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{2} = activate(z^{[1](i)}_{2})\\ \qquad\: 
-           z^{[1](i)}_{3} = w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{3} = activate(z^{[1](i)}_{3}) $
+           z^{[1](i)}_{3} = w^{[1]T}_{3}X^{(i)} + b^{[1]}_{3} \qquad\qquad\qquad\qquad\: a^{[1](i)}_{3} = activate(z^{[1](i)}_{3}) $$
       
       
 - [ 2 ] :         

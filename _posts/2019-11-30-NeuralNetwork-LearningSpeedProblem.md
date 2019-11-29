@@ -14,10 +14,10 @@ mathjax: true
 when we optimize our parameters W and b, we used gradiant descent algorithm. This gradient algorithm perform only just one update only after gradients are computed with total data. 
 
 Let's consider training data has size m. We vectorized relevant parameters to speed our optimization procedure. 
-
-$ Z^{[l]} = W^{[l]}A^{[l-1]} + b^{[l]} \\
-  A^{[l]} = g^{[l]}(Z^{[l]}) \\
-  J(W, b) = \frac{1}{m}\sum_{i = 1}^{m}L(\hat{Y}^{(i)}, Y^{(i)})$
+$$ \, \\
+Z^{[l]} = W^{[l]}A^{[l-1]} + b^{[l]} \\
+A^{[l]} = g^{[l]}(Z^{[l]}) \\
+J(W, b) = \frac{1}{m}\sum_{i = 1}^{m}L(\hat{Y}^{(i)}, Y^{(i)}) $$
          
 Even though we do vectorization, if the data size m is big, implementation of gradient descent on our entire training set wiil be very slow. So it turns out that we can get a faster algorithm if we let gradient descent start to make some progress even before we finish processing our entire training set.
 
@@ -30,19 +30,19 @@ Let's split up our entire training set into smaller training set, which is calle
 So, algorithm to do gradient descent with each mini batch $X^{\small\{t\small\}}, Y^{\small\{t\small\}}$ is called minibatch gradient descent rather than with entire 10000 training data, which is called batch gradient descent.
 
 For t from 1 to 10       
-                    
-$\quad\:\: Z^{[1]} = W^{[1]}X^{\small\{t\small\}} + b^{[l]} \\
- \quad\:\: A^{[1]} = g^{[1]}(Z^{[1]}) \\
- \quad\:\: \vdots \\
- \quad\:\: Z^{[L]} = W^{[L]}A^{[L-1]} + b^{[L]} \\
- \quad\:\: A^{[L]} = g^{[L]}(Z^{[L]}) \\ $
-  
-$ \quad\:\: J(W, b) = \frac{1}{1000}\sum_{i = 1}^{1000}L(\hat{Y}^{(i)}, Y^{(i)})\: for\: X^{\small\{t\small\}}, Y^{\small\{t\small\}} $  
-
+$$ \,\\ \quad\:\: 
+Z^{[1]} = W^{[1]}X^{\small\{t\small\}} + b^{[l]} \\ \quad\:\: 
+A^{[1]} = g^{[1]}(Z^{[1]}) \\ \quad\:\: 
+\vdots \\ \quad\:\: 
+Z^{[L]} = W^{[L]}A^{[L-1]} + b^{[L]} \\ \quad\:\: 
+A^{[L]} = g^{[L]}(Z^{[L]}) \\ 
+\, \\ \quad\:\: 
+J(W, b) = \frac{1}{1000}\sum_{i = 1}^{1000}L(\hat{Y}^{(i)}, Y^{(i)})\: for\: X^{\small\{t\small\}}, Y^{\small\{t\small\}} \\  
+\, \\
     Compute gradients and update parameters for l from 1 to L       
-                    
-$ \quad\:\: W^{[l]} = W^{[l]} - \alpha dW^{[l]}\\
-  \quad\:\: b^{[l]} \:\:\:= b^{[l]} \:\:\:- \alpha db^{[l]} $  
+\, \\ \quad\:\: 
+W^{[l]} = W^{[l]} - \alpha dW^{[l]}\\ \quad\:\: 
+b^{[l]} \:\:\:= b^{[l]} \:\:\:- \alpha db^{[l]} $$  
 
 All procedure to update parameters with 10 mini-batches is 1 epoch of training.
 

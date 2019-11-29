@@ -37,10 +37,10 @@ A^{[1]} = g^{[1]}(Z^{[1]}) \\ \quad\:\:
 Z^{[L]} = W^{[L]}A^{[L-1]} + b^{[L]} \\ \quad\:\: 
 A^{[L]} = g^{[L]}(Z^{[L]}) \\ 
 \, \\ \quad\:\: 
-J(W, b) = \frac{1}{1000}\sum_{i = 1}^{1000}L(\hat{Y}^{(i)}, Y^{(i)})\: for\: X^{\small\{t\small\}}, Y^{\small\{t\small\}} \\  
-\, \\
-    Compute gradients and update parameters for l from 1 to L       
-\, \\ \quad\:\: 
+J(W, b) = \frac{1}{1000}\sum_{i = 1}^{1000}L(\hat{Y}^{(i)}, Y^{(i)})\: for\: X^{\small\{t\small\}}, Y^{\small\{t\small\}} $$
+
+         Compute gradients and update parameters for l from 1 to L       
+$$ \, \\ \quad\:\: 
 W^{[l]} = W^{[l]} - \alpha dW^{[l]}\\ \quad\:\: 
 b^{[l]} \:\:\:= b^{[l]} \:\:\:- \alpha db^{[l]} $$  
 
@@ -135,22 +135,23 @@ So, to build up more sophisticated optimization algorithms, we need exponentiall
                           
 Let's suppose we have data : $\theta_{1}  \,\dots\, \theta_{t}$              
 Then, 
-
-$ \quad\qquad\,               V_{0} = 0 \\
-  \quad\theta_{1} \rightarrow V_{1} = \beta\, V_{0} + (1-\beta\,)\,\theta_{1} \\
-  \quad\theta_{2} \rightarrow V_{2} = \beta\, V_{1} + (1-\beta\,)\,\theta_{2} 
-                              \:\:\,= \beta\,(1- \beta\,)\,\theta_{1} + (1-\beta\,)\,\theta_{2} \\
-  \quad\theta_{3} \rightarrow V_{3} = \beta\, V_{2} + (1-\beta\,)\,\theta_{3} 
-                              \:\:\,= \beta^{2}\,(1- \beta\,)\,\theta_{1} + 
-                                      \beta\,(1-\beta\,)\,\theta_{2} +
-                                      (1-\beta\,)\,\theta_{3}\\
-  \quad\vdots     \\
-  \quad\theta_{t} \,\rightarrow V_{t} = \beta\, V_{t-1} + (1-\beta\,)\,\theta_{t}
-                                    \:= \beta^{t-1}\,(1- \beta\,)\,\theta_{1} + 
-                                        \beta^{t-2}\,(1- \beta\,)\,\theta_{2} + \dots +
-                                        (1- \beta\,)\,\theta_{t} \\
-$
-                                        
+$$ \,\\ \quad\qquad\,               
+                       V_{0} = 0 \\ \quad
+\theta_{1} \rightarrow V_{1} = \beta\, V_{0} + (1-\beta\,)\,\theta_{1} \\ \quad
+\theta_{2} \rightarrow V_{2} = \beta\, V_{1} + (1-\beta\,)\,\theta_{2} 
+                       \:\:\,= \beta\,(1- \beta\,)\,\theta_{1} 
+                               + (1-\beta\,)\,\theta_{2} \\ \quad
+\theta_{3} \rightarrow V_{3} = \beta\, V_{2} + (1-\beta\,)\,\theta_{3} 
+                       \:\:\,= \beta^{2}\,(1- \beta\,)\,\theta_{1} 
+                               + \beta\,(1-\beta\,)\,\theta_{2} 
+                               + (1-\beta\,)\,\theta_{3}\\ \quad
+\vdots \\ \quad
+\theta_{t} \,\rightarrow V_{t} = \beta\, V_{t-1} + (1-\beta\,)\,\theta_{t}
+                             \:= \beta^{t-1}\,(1- \beta\,)\,\theta_{1} 
+                                 + \beta^{t-2}\,(1- \beta\,)\,\theta_{2} 
+                                 + \dots 
+                                 + (1- \beta\,)\,\theta_{t} $$
+                                       
 So, $V_{t}$ is form of weighted averages of $\theta_{1} \dots \theta_{t}$
 But since we set $V_{0} = 0$, our $V$ values start from very low values which is very different from actual value $\theta$. So, there is one technical detail called biase correction that can make our computation of these averages more accurately: $\frac{V_{t}}{1-\beta^{t}}$
 
@@ -166,20 +167,18 @@ $\beta\,$ is number between 0 and 1, and if $\beta\,$ becomes close to 1, it giv
 ### Gradient Descent with Momentum
 
 Optimization algorith with this exponentially weight moving average is called gradient descent with momentum that almost always works faster than the standard gradient descent algorithm. The basic idea is to compute an exponentially weighted average of our gradients, and then use that gradient to update our weights instead. In practice, people usually don't do bias correction, because after just ten iterations, our moving average will be warmed up and is no longer a bias estimate.
-
-$ Set\:\, V_{dW} = 0,\, V_{db} = 0 $
-                
-$ On \:\, iteration \:\, t $
+$$ \,\\
+Set\:\, 
+V_{dW} = 0,\, V_{db} = 0 \\
+On \:\, iteration \:\, t $$
 
     compute dW, db on current mini-batch
-$
-\quad\:\: V_{dW} = \beta_{1}\,V_{dW} + (1-\,\beta_{1}\,)\,dW \\
-\quad\:\: V_{db} \:\,= \beta_{1}\,V_{db} \:\,+ (1-\,\beta_{1}\,)\,db \\
-$
-            
-$
-\quad\:\: W = W - \alpha\, V_{dW} \\
-\quad\:\: b \:\,\,= b \:\:\,- \alpha\, V_{db} $
+$$ \,\\ \quad\:\: 
+V_{dW} = \beta_{1}\,V_{dW} + (1-\,\beta_{1}\,)\,dW \\ \quad\:\: 
+V_{db} \:\,= \beta_{1}\,V_{db} \:\,+ (1-\,\beta_{1}\,)\,db \\
+\, \\ \quad\:\: 
+W = W - \alpha\, V_{dW} \\ \quad\:\: 
+b \:\,\,= b \:\:\,- \alpha\, V_{db} $$
 
 In practice, people usually set $\beta_{1}$ as a number close to 0.9
 

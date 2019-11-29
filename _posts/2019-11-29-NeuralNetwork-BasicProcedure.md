@@ -492,11 +492,11 @@ for k,v in activate_function.items():
 
 ![image](/assets/images/NeuralNetwork_1.1_BasicProcedure_files/NeuralNetwork_1.1_BasicProcedure_50_0.png)
 
-$$ 
+$$ . \\
 1. sigmoid( z ) = \frac{1}{1 + e^{-(z)}} \\   
 2. tanh( z ) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} \\       
-3. relu( z ) = \max(0, z) \\
-Sigmoid, tanh, relu functions are commonly used. For a long time, s-shaped function called tanh or sigmoid was a popular activation function. Among them, tanh function almost always works better than sigmoid function, because if we use tanh function which has value between -1 and +1, the mean of this function is 0, while sigmoid function has mean 0.5. It kind of has the effect of centering our data so that the mean of our data is closer to 0 rather than 0.5. And this actually makes learning for the next layer a little bit easier. One exception is output layer. In the case that y_hat have to be probability that is in between 0 and 1, we have to use sigmoid function as activate function. But, downside of s-shaped function like sigmoid and tanh is that when z is very large or very small, the slope of the function ends up being close to 0. So this can slow down gradient descent. $$
+3. relu( z ) = \max(0, z) \,\\ $$
+Sigmoid, tanh, relu functions are commonly used. For a long time, s-shaped function called tanh or sigmoid was a popular activation function. Among them, tanh function almost always works better than sigmoid function, because if we use tanh function which has value between -1 and +1, the mean of this function is 0, while sigmoid function has mean 0.5. It kind of has the effect of centering our data so that the mean of our data is closer to 0 rather than 0.5. And this actually makes learning for the next layer a little bit easier. One exception is output layer. In the case that y_hat have to be probability that is in between 0 and 1, we have to use sigmoid function as activate function. But, downside of s-shaped function like sigmoid and tanh is that when z is very large or very small, the slope of the function ends up being close to 0. So this can slow down gradient descent. 
 
                 
 So one other choice is that is very popular is what's called the rectify linear unit(relu). The advantage of the Relu is that our neur network will learn much faster than when using the tanh or the sigmoid funcion. So, Relu is increasingly the default choice of activate function. 

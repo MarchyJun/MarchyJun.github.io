@@ -1,9 +1,7 @@
 ---
 layout: article
-title: NeuralNetwork - Bias & Variance
+title: MLP - Bias & Variance
 mathjax: true
-articles:
-  data_source: mlp
 ---
 
 

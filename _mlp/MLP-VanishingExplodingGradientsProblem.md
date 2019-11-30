@@ -1,6 +1,6 @@
 ---
 layout: article
-title: NeuralNetwork - Vanishing and Exploding Gradients Problem
+title: MLP - Vanishing and Exploding Gradients Problem
 mathjax: true
 ---
 

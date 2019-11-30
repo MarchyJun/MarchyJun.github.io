@@ -24,8 +24,13 @@ header:
       # @end locale config
     url: /archive.html
 
-  - title: Resources
-    url: /docs/resources.html
+  - title: Deep Learning
+    url: 
+  - title: Machine Learning
+    url:
+  - title: Projects
+    url: 
+
 #     - title: Deep Learning
 #       url: /archive.html
 #     - title: Machine Learning

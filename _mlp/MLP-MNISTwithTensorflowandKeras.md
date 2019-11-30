@@ -1,6 +1,6 @@
 ---
 layout: article
-title: NeuralNetwork - Fashion-MNIST with Tensorflow and Keras
+title: MLP - Fashion-MNIST with Tensorflow and Keras
 mathjax: true
 ---
 

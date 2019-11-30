@@ -1,6 +1,8 @@
 ---
 layout: article
 title: NeuralNetwork - Bias & Variance
+resource: true
+categories: [deeplearning]
 mathjax: true
 ---
 

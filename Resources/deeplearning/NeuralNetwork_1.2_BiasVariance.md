@@ -1,3 +1,11 @@
+---
+layout: article
+title: Document - Writing Posts
+resource: true
+categories: [deeplearning]
+mathjax: true
+---
+
 
 # Bias Variance Trade-off
 

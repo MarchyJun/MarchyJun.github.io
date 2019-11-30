@@ -1,6 +1,6 @@
 ---
 layout: article
-title: MLP - Basic Procedure
+title: MLP - (1.1) Basic Procedure
 mathjax: true
 aside:
   toc: true

@@ -1,6 +1,6 @@
 header:
   - title: Home
-    url: /home.html
+    url: /my_home.html
   - title: Deep Learning
     url: /deeplearning.html
   - title: Machine Learning

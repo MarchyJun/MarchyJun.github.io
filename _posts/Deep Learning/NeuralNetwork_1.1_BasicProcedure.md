@@ -1,4 +1,9 @@
-
+---
+layout: article
+title: Document - Writing Posts
+categories: [Deep Learning]
+mathjax: true
+---
 
 ```python
 import numpy as np

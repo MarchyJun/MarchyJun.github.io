@@ -1,6 +1,6 @@
 ---
 layout: article
-title: NeuralNetwork - Hyperparameter Tuning
+title: MLP - Hyperparameter Tuning
 mathjax: true
 ---
 

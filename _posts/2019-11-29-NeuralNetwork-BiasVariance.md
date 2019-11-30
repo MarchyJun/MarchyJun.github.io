@@ -2,9 +2,6 @@
 layout: article
 title: NeuralNetwork - Bias & Variance
 mathjax: true
-articles:
-  data_source: resources_deeplearning
-  type: grid
 ---
 
 

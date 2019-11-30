@@ -1,3 +1,8 @@
+---
+layout: article
+title: temp - check
+mathjax: true
+---
 
 # Bias Variance Trade-off
 

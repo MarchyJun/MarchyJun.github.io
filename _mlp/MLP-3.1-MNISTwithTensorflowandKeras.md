@@ -1,7 +1,9 @@
 ---
 layout: article
-title: MLP - Fashion-MNIST with Tensorflow and Keras
+title: MLP - (3.1) Fashion-MNIST with Tensorflow and Keras
 mathjax: true
+aside:
+  toc: true
 ---
 
 ```python

@@ -1,5 +1,10 @@
 ---
-layout: category
+layout: page
 title: Machine Learning
-permalink: '/machinelearning'
+permalink: '/machinelearning.html'
 ---
+
+<div class=''>
+        <section class='my-5'>
+        </section>
+</div>

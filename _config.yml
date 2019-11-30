@@ -229,3 +229,4 @@ plugins:
 collections:
   Deep_learning:
     output: true
+    title: Deep learning

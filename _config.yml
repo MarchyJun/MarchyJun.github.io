@@ -224,9 +224,4 @@ plugins:
   - jekyll-sitemap
   - jemoji
 
-## => Collections
-##############################
-collections:
-  Deep_learning:
-    output: true
-    title: Deep learning
+

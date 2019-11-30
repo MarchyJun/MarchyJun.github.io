@@ -223,3 +223,9 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+
+## => Collections
+##############################
+collections:
+- Machine_Learning
+- Deel_Learning

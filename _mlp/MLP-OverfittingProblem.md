@@ -1,6 +1,6 @@
 ---
 layout: article
-title: NeuralNetwork - Overfitting Problem
+title: MLP - Overfitting Problem
 mathjax: true
 ---
 

@@ -24,9 +24,6 @@ header:
       # @end locale config
     url: /archive.html
 
-  - title: Deep learning
-    url: /_layouts/category.html
-
 #   - titles:
 #       # @start locale config
 #       en      : &EN       About

@@ -1,7 +1,6 @@
 ---
 layout: article
 title: NeuralNetwork - Basic Procedure
-categories :[Deep Learning]
 mathjax: true
 ---
 

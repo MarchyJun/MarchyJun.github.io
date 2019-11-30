@@ -2,6 +2,8 @@
 layout: article
 title: MLP - Bias & Variance
 mathjax: true
+aside:
+  toc: true
 ---
 
 

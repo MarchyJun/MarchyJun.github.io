@@ -224,9 +224,11 @@ plugins:
   - jekyll-sitemap
   - jemoji
 
-# ## => Category
-# ##############################
-# category-list: [machinelearning, deeplearning]
+## => Collections
+##############################
+collections:
+  deeplearning:
+    output: true
 
 
 

@@ -24,6 +24,10 @@ header:
       # @end locale config
     url: /archive.html
 
+  - titles: Deep learning
+      en : &EN Deep learning
+    url: /archive.html
+
 #   - titles:
 #       # @start locale config
 #       en      : &EN       About

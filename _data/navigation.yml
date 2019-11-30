@@ -25,7 +25,7 @@ header:
     url: /archive.html
 
   - title: Deep learning
-    url: /archive.html
+    url: /_layouts/category.html
 
 #   - titles:
 #       # @start locale config

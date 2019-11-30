@@ -227,5 +227,5 @@ plugins:
 ## => Collections
 ##############################
 collections:
-- Machine_Learning
-- Deel_Learning
+- Machine_learning
+- Deep_learning

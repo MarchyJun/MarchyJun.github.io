@@ -1,6 +1,6 @@
 ---
 layout: article
-title: MLP - 1.2 Bias & Variance
+title: MLP - (1.2) Bias & Variance
 mathjax: true
 aside:
   toc: true

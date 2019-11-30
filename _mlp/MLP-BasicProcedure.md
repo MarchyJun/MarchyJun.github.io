@@ -1,6 +1,6 @@
 ---
 layout: article
-title: NeuralNetwork - Basic Procedure
+title: MLP - Basic Procedure
 mathjax: true
 ---
 

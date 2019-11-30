@@ -2,6 +2,8 @@
 layout: article
 title: MLP - Basic Procedure
 mathjax: true
+aside:
+  toc: true
 ---
 
 ```python

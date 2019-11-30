@@ -24,7 +24,7 @@ So best model is that have lowest bias and lowest variance. But in traditional s
     - Try longer
     - Check different NN architecture
     - Keep doing until fit train set well
-    
+   
 - High variance : It is related to validation or test set performance.
     - Get more data
     - Use regularization ( reduce overfiting )

@@ -25,10 +25,11 @@ header:
     url: /archive.html
 
   - title: Resources
-    - title: Deep Learning
-      url: /archive.html
-    - title: Machine Learning
-      url: /archive.html
+    url: /archive.html
+#     - title: Deep Learning
+#       url: /archive.html
+#     - title: Machine Learning
+#       url: /archive.html
 
 #   - titles:
 #       # @start locale config

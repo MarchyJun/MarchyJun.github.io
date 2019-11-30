@@ -25,9 +25,9 @@ header:
     url: /archive.html
 
   - title: Deep Learning
-    url: /category/deeplearning.html
+    url: /deeplearning.html
   - title: Machine Learning
-    url: /category/machinelearning.html
+    url: /machinelearning.html
   - title: Projects
     url: /archive.html
 

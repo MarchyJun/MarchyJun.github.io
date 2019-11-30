@@ -4,6 +4,8 @@ title: MLP - (1.2) Bias & Variance
 mathjax: true
 aside:
   toc: true
+articles:
+  type: brief
 ---
 
 

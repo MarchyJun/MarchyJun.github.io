@@ -727,7 +727,7 @@ parameters = model(X_train = train_images, Y_train = train_labels, X_test = test
     Test Accuracy: 0.8607
 
 
-# 2. With TensorFlow and Keras
+## 2. With TensorFlow and Keras
 
 ```python
 from tensorflow.python.keras import backend as K

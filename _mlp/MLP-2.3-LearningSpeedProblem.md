@@ -1,7 +1,9 @@
 ---
 layout: article
-title: MLP - Learning Speed Problem
+title: MLP - (2.3) Learning Speed Problem
 mathjax: true
+aside:
+  toc: true
 ---
 
 

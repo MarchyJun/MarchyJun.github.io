@@ -4,8 +4,6 @@ title: MLP - (1.1) Basic Procedure
 mathjax: true
 aside:
   toc: true
-articles:
-  type: brief
 ---
 
 ```python

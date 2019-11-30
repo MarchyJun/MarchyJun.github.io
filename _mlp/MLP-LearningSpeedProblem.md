@@ -1,6 +1,6 @@
 ---
 layout: article
-title: NeuralNetwork - Learning Speed Problem
+title: MLP - Learning Speed Problem
 mathjax: true
 ---
 

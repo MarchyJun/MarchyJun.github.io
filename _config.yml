@@ -227,9 +227,9 @@ plugins:
 ## => Collections
 ##############################
 collections:
-  resources_deeplearning:
+  deeplearning:
     output: true
-  resources_machinelearning:
+  machinelearning:
     output: true
 
 

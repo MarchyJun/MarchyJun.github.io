@@ -1,7 +1,9 @@
 ---
 layout: article
-title: MLP - Vanishing and Exploding Gradients Problem
+title: MLP - (2.2) Vanishing and Exploding Gradients Problem
 mathjax: true
+aside:
+  toc: true
 ---
 
 ```python

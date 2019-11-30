@@ -1,7 +1,9 @@
 ---
 layout: article
-title: MLP - Hyperparameter Tuning
+title: MLP - (3.2) Hyperparameter Tuning
 mathjax: true
+aside:
+  toc: true
 ---
 
 ```python

@@ -2,6 +2,9 @@
 layout: article
 title: NeuralNetwork - Basic Procedure
 mathjax: true
+articles:
+  data_source: resources_deeplearning
+  type: grid
 ---
 
 ```python

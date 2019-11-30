@@ -2,8 +2,6 @@
 layout: article
 title: NeuralNetwork - Basic Procedure
 mathjax: true
-articles:
-  data_source: mlp
 ---
 
 ```python

@@ -1,7 +1,9 @@
 ---
 layout: article
-title: MLP - Overfitting Problem
+title: MLP - (2.1) Overfitting Problem
 mathjax: true
+aside:
+  toc: true
 ---
 
 # Overfitting Problem

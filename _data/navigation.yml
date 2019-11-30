@@ -25,7 +25,7 @@ header:
     url: /archive.html
 
   - title: Resources
-    url: /archive.html
+    url: /_layouts/articles.html
 #     - title: Deep Learning
 #       url: /archive.html
 #     - title: Machine Learning

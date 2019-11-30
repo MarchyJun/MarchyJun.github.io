@@ -729,19 +729,6 @@ parameters = model(X_train = train_images, Y_train = train_labels, X_test = test
 
 # 2. With TensorFlow and Keras
 
-
-```python
-# from tensorflow.python.keras.layers import Reshape, MaxPooling2D
-# from tensorflow.python.keras.layers import InputLayer, Input
-# from tensorflow.python.keras import backend as K
-# from tensorflow.python.keras.models import Sequential
-# from tensorflow.python.keras.layers import Conv2D, Dense, Flatten
-# from tensorflow.python.keras.callbacks import TensorBoard
-# from tensorflow.python.keras.optimizers import Adam
-# from tensorflow.python.keras.models import load_model
-```
-
-
 ```python
 from tensorflow.python.keras import backend as K
 from tensorflow.python.keras.models import Sequential

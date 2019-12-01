@@ -1,15 +1,21 @@
+---
+layout: article
+title: MatrixDecomposition - (1) Decomposition Methods
+mathjax: true
+aside:
+  toc: true
+---
+
 
 # 1. Eigenvalue & Eigenvector
 
 All matrix has some information and the information must not be changed according to how we see the matrix : in rows, or in columns. Eigenvalue and Eigenvector is related to this essential information of its matrix.          
 For any square matrix A, we define $\lambda$ and $\vec{v}$($\ne$ 0) satisfying $A\vec{v} = \lambda \vec{v}$ as eigenvalue $\lambda$ and eigenvector $\vec{v}$ of the matrix A. Now let's find eigenvalue and eigenvector of A(p by p).
-
-$
+$$ \,\\
 \qquad 
 A\vec{v} = \lambda \vec{v} \\ \, \leftrightarrow
 (\lambda I_{p} - A)\vec{v} = 0 \\ \,\leftrightarrow
-B\vec{v} = 0 \:\: (\,let \:\: \lambda I_{p} - A = B \,)
-$
+B\vec{v} = 0 \:\: (\,let \:\: \lambda I_{p} - A = B \,) $$
         
 Now note that null space of B is $N(B) = \{\vec{x} \in R^{p} \vert B\vec{x} = 0 \}$. So $\vec{v} \in N(B)$. It means that $N(B) = N(\lambda I_{p} - A)$ is nontrivial.              
 Also note that for matrix M, M's columns are linearly independent iff $N(B) = {0}$. Since $N(B) \ne {0}$, it means B's columns are not linearly independent. So $B = \lambda I_{p} - A$ is not invertible and $det(\lambda I_{p} - A) = 0$             

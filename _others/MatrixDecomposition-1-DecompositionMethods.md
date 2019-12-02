@@ -87,34 +87,34 @@ So, $$A = VJV^{-1} \:\: where\:\: J = \begin{bmatrix} \lambda & 1       & 0 \\
 ## 2.3. Spectral Decomposition
 
 If A is square and also symmetric matrix, then we can use spectral decomposition.          
-Let A be n by n square and symmetrix matrix. Let's denote eigenvalue and eigenvector of A as $\lambda_{i}, \vec{r}_{i}$, and let $\Gamma = \begin{bmatrix} \vec{\gamma}_{1} & \vec{\gamma}_{2} & \dots & \vec{\gamma}_{n} \end{bmatrix}$, 
-$\Lambda = \begin{bmatrix} \lambda_{1} & 0       & 0  \\
+Let A be n by n square and symmetrix matrix. Let's denote eigenvalue and eigenvector of A as $$\lambda_{i}, \vec{r}_{i}$$, and let $$\Gamma = \begin{bmatrix} \vec{\gamma}_{1} & \vec{\gamma}_{2} & \dots & \vec{\gamma}_{n} \end{bmatrix}$$, 
+$$\Lambda = \begin{bmatrix} \lambda_{1} & 0       & 0  \\
                            0           & \ddots  & 0  \\
-                           0           & 0       & \lambda_{n} \end{bmatrix} $. Then $\: \Gamma \Gamma^{T} = \Gamma^{T} \Gamma  = I$  
+                           0           & 0       & \lambda_{n} \end{bmatrix} $. Then $\: \Gamma \Gamma^{T} = \Gamma^{T} \Gamma  = I$$  
 
-- If A is full rank, $A = \Gamma \Lambda \Gamma^{T} \\ \;\:\,
-                         = \sum_{i = 1}^{n}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} \\ $
+- If A is full rank, $$A = \Gamma \Lambda \Gamma^{T} \\ \;\:\,
+                         = \sum_{i = 1}^{n}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} \\ $$
                                
-- If $rank(A) = r < n$, $A = \Gamma \Lambda \Gamma^{T} \\ \;\:\,
+- If $rank(A) = r < n$, $$A = \Gamma \Lambda \Gamma^{T} \\ \;\:\,
                            = \begin{bmatrix} \Gamma_{1} & \Gamma_{0} \end{bmatrix} 
                              \begin{bmatrix} \Lambda_{1} & 0 \\
                                               0          & 0 \end{bmatrix}
                              \begin{bmatrix} \Gamma_{1}^{T} \\ \Gamma_{0}^{T}\end{bmatrix} \\ \;\:\,
                            = \Gamma_{1}\Lambda_{1}\Gamma_{1}^{T} \\ \;\:\,
                            = \sum_{i = 1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}}\:\:
-where\:\: \Gamma_{1} : (\,n, r\,),\:\: \Gamma_{0} : (\,n, n-r\,)\:\: \Lambda_{1} : (\,r, r\,) $                 
+where\:\: \Gamma_{1} : (\,n, r\,),\:\: \Gamma_{0} : (\,n, n-r\,)\:\: \Lambda_{1} : (\,r, r\,) $$                 
 
 ## 2.4. Singular Value Decomposition
 
 Eigenvalue decomposition, Jordan form, Spectral decomposition can be used only when matrix is square matrix. But singular value decomposition can be used regardless of a shape of matrix.     
            
-Let A (n, p) has rank $r \leqslant min(n, p)$          
+Let A (n, p) has rank $$r \leqslant min(n, p)$$          
 Then 
-$AA^{T}$ : n by n square, symmetric matrix $\rightarrow \:\: AA^{T} = \Gamma\Lambda\Gamma^{T} = \sum_{i=1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} $
+$$AA^{T}$$ : n by n square, symmetric matrix $$\rightarrow \:\: AA^{T} = \Gamma\Lambda\Gamma^{T} = \sum_{i=1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} $$
 
-$\quad\;\;\: A^{T}A$ : p by p square, symmetric matrix $\rightarrow \:\: A^{T}A = \Delta\Lambda\Delta^{T} = \sum_{i=1}^{r}{\lambda_{i}\delta_{i}\delta{i}^{T}}$      
+$$\quad\;\;\: A^{T}A$ : p by p square, symmetric matrix $\rightarrow \:\: A^{T}A = \Delta\Lambda\Delta^{T} = \sum_{i=1}^{r}{\lambda_{i}\delta_{i}\delta{i}^{T}}$$      
       
-And $A = \Gamma\Sigma\Delta^{T} \\ \:\,\;
+And $$A = \Gamma\Sigma\Delta^{T} \\ \:\,\;
        = \Gamma_{1}\Sigma_{1}\Delta_{1}^{T} \\ \:\,\;
        = \sum_{i=1}^{r}{\lambda_{i}^{\frac{1}{2}}\gamma_{i}\delta_{i}} \qquad where\:\: 
 \Gamma=\begin{bmatrix} \Gamma_{1}\,(n, r) \, \vert \, \Gamma_{0}\,(n,n-r) \end{bmatrix} 
@@ -124,6 +124,6 @@ And $A = \Gamma\Sigma\Delta^{T} \\ \:\,\;
 \qquad\qquad\qquad\qquad\qquad\;\;
 \Sigma = \begin{bmatrix} \Sigma_{1} & 0         \\
                          0          & \Sigma_{0}\end{bmatrix}, \:\: \Sigma_{1} = diag\{\lambda_{1}^{\frac{1}{2}}, \dots \lambda_{r}^{\frac{1}{2}}\} 
-                $
+                $$
 
 Singular value decomposition is very useful in many ways: one example is image compression. Let's compress image by singular value decomposition.

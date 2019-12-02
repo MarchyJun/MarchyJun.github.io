@@ -334,7 +334,7 @@ def plot_compression_ratio(img):
 ```python
 plot_compression_ratio(org_img)
 ```
-
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/compression_ratio.png)
 
 
 
@@ -413,6 +413,7 @@ b_frobenius_norm = calculate_frobenius_norm(org_b)
 
 plot_frobenius_norm(r_frobenius_norm, g_frobenius_norm, b_frobenius_norm, 516)
 ```
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/frobenius_norm.png)
 
 
 
@@ -420,7 +421,7 @@ plot_frobenius_norm(r_frobenius_norm, g_frobenius_norm, b_frobenius_norm, 516)
 # 3. Optimal Number of Eigen Value
 
 By using above information, I want to find optimal number of eigen value for compression. I set up 2 criteria.        
-- 1. I think restored information is most important. I will choose the number of eigenvalue that have 80 ~ 90% restored information.
+- 1. I think restored information is most important. I will choose the number of eigenvalue that have 75 ~ 85% restored information.
 - 2. Compare compression ratio and frobenius norm within above range of eigenvalue. Since the bigger compression ratio is better, and the smaller frobenius norm is better, so I will choose the number of eigenvalue that have biggest value of compression ratio - frobenius norm.  
 
 ## 3.1. 80~90% Restored Information
@@ -456,7 +457,7 @@ k_eigen_range
 
 
 
-57 ~ 103 eigenvalues have 80 ~ 90% restored information. This range of eigenvalues is a set of candidates of optimal number of eigenvalue.
+57 ~ 103 eigenvalues have 75 ~ 85% restored information. This range of eigenvalues is a set of candidates of optimal number of eigenvalue.
 
 ## 3.2. Compression Ratio and Frobenius Norm
 
@@ -596,8 +597,7 @@ def show_comp_frob_target(k_eigen_range, compression_ratio_array_scaled, frobeni
 ```python
 show_comp_frob_target(k_eigen_range, compression_ratio_array_scaled, frobenius_norm_array_scaled)
 ```
-
-
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/comp_frob_target.png)
 
 
 
@@ -934,6 +934,8 @@ def optimal_compression(org_img, show_graph = True, show_image = True):
 ```python
 optimal_compression(org_img,show_graph=True,show_image=True)
 ```
+
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/optimal_compression.png)
 
 # 4. Make Web Application with Dash
 

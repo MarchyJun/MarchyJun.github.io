@@ -75,9 +75,9 @@ Also, let's define generalized eigenvector of grade 3 as $$\vec{v}_{3}$$. Then
 $$\,(A - \lambda I)^{2}\vec{v}_{3} \ne \vec{0} \\ \, 
    (A - \lambda I)^{3}\vec{v}_{3} = \vec{0}$$.
       
-So, $$A\vec{v}_{1} = \lambda\vec{v}_{1} \\
-     A\vec{v}_{2} = \vec{v}_{1} + \lambda\vec{v}_{2} \quad \rightarrow \vec{v}_{1}, \; \vec{v}_{2}, \; \vec{v}_{3} \:\: are \:\: linearly \:\: independent\\
-     A\vec{v}_{3} = \vec{v}_{2} + \lambda\vec{v}_{2}$$
+So, $$ \begin{cases} A\vec{v}_{1} = \lambda\vec{v}_{1} \\
+                     A\vec{v}_{2} = \vec{v}_{1} + \lambda\vec{v}_{2} \\
+                     A\vec{v}_{3} = \vec{v}_{2} + \lambda\vec{v}_{2} \end{cases} \quad \rightarrow \vec{v}_{1}, \; \vec{v}_{2}, \; \vec{v}_{3} \:\: are \:\: linearly \:\: independent\\ $$
      
 Let $$V = \begin{bmatrix}\vec{v}_{1} & \vec{v}_{2} & \vec{v}_{3} \end{bmatrix}$$, then $$V$$ is invertible.       
 So, $$A = VJV^{-1} \:\: where\:\: J = \begin{bmatrix} \lambda & 1       & 0 \\

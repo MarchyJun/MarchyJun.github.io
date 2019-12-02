@@ -94,8 +94,7 @@ display_img(org_img, org_r, org_g, org_b)
     Original Image : 
 
 
-
-![png](MatrixDecomposition_2_ImageCompression_files/MatrixDecomposition_2_ImageCompression_8_1.png)
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/MatrixDecomposition_2_ImageCompression_8_1.png)
 
 
 These are plots of an original image and R, G, B.  
@@ -166,7 +165,7 @@ display_img(compressed_img_uint, comp_r, comp_g, comp_b)
 
 
 
-![png](MatrixDecomposition_2_ImageCompression_files/MatrixDecomposition_2_ImageCompression_14_1.png)
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/MatrixDecomposition_2_ImageCompression_14_1.png)
 
 
 These are plots of images only with 10% eigenvalues.
@@ -187,7 +186,7 @@ for i,p in enumerate([1, 2, 5, 10, 20, 40, 60, 80]):
 ```
 
 
-![png](MatrixDecomposition_2_ImageCompression_files/MatrixDecomposition_2_ImageCompression_17_0.png)
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/MatrixDecomposition_2_ImageCompression_17_0.png)
 
 
 # 2. Some Information after SVD 
@@ -271,7 +270,7 @@ def plot_restored_info(img):
 ```python
 plot_restored_info(org_img)
 ```
-![png](MatrixDecomposition_2_ImageCompression_files/restored_information.png)
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/restored_information.png)
 
 
    

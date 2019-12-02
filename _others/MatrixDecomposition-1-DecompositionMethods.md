@@ -26,12 +26,12 @@ There are up to p eigenvalues $\lambda_{1} \geqslant \lambda_{2} \geqslant \dots
 
 ## 2.1. Eigenvalue Decomposition
 
-Let A be n by n square matrix. Let's denote eigenvalue and eigenvector of A as $\lambda_{i}, \vec{x}_{i}$, and let $S = \begin{bmatrix} \vec{x}_{1} & \vec{x}_{2} & \dots & \vec{x}_{n} \end{bmatrix}$, 
-$\Lambda = \begin{bmatrix} \lambda_{1} & 0       & 0  \\
+Let A be n by n square matrix. Let's denote eigenvalue and eigenvector of A as $$\lambda_{i}, \vec{x}_{i}$$, and let $$S = \begin{bmatrix} \vec{x}_{1} & \vec{x}_{2} & \dots & \vec{x}_{n} \end{bmatrix}$$, 
+$$\Lambda = \begin{bmatrix} \lambda_{1} & 0       & 0  \\
                            0           & \ddots  & 0  \\
-                           0           & 0       & \lambda_{n} \end{bmatrix} $             
+                           0           & 0       & \lambda_{n} \end{bmatrix} $$.             
 Then             
-$
+$$
 AS 
 = A\begin{bmatrix}           \vec{x}_{1} &            \vec{x}_{2} & \dots &            \vec{x}_{n} \end{bmatrix} \\ \quad\;
 = \begin{bmatrix}           A\vec{x}_{1} &           A\vec{x}_{2} & \dots &           A\vec{x}_{n} \end{bmatrix} \\ \quad\;
@@ -40,11 +40,11 @@ AS
   \begin{bmatrix} \lambda_{1} & 0       & 0  \\
                            0           & \ddots  & 0  \\
                            0           & 0       & \lambda_{n} \end{bmatrix} \\ \quad\;
-= S\Lambda $
+= S\Lambda $$
           
-If $S = \begin{bmatrix} \vec{x}_{1} & \vec{x}_{2} & \dots & \vec{x}_{n} \end{bmatrix}$ are linearly independent, then $det(S) \ne 0$ and $S^{-1}$ exists, so $A = S\Lambda S^{-1}$    
+If $$S = \begin{bmatrix} \vec{x}_{1} & \vec{x}_{2} & \dots & \vec{x}_{n} \end{bmatrix}$$ are linearly independent, then $$det(S) \ne 0$$ and $$S^{-1}$$ exists, so $$A = S\Lambda S^{-1}$$   
                
-That is, if A is n by n square matrix and eigenvectors are linearly independent, A can be decomposed as $A = S\Lambda S^{-1}$. 
+That is, if A is n by n square matrix and eigenvectors are linearly independent, A can be decomposed as $$A = S\Lambda S^{-1}$$. 
 
 ## 2.2. Jordan Form
 

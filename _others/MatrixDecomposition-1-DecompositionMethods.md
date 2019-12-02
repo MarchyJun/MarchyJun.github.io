@@ -33,13 +33,13 @@ $$\Lambda = \begin{bmatrix} \lambda_{1} & 0       & 0  \\
 Then             
 $$
 AS 
-= A\begin{bmatrix}           \vec{x}_{1} &            \vec{x}_{2} & \dots &            \vec{x}_{n} \end{bmatrix} \\ \quad\;
-= \begin{bmatrix}           A\vec{x}_{1} &           A\vec{x}_{2} & \dots &           A\vec{x}_{n} \end{bmatrix} \\ \quad\;
-= \begin{bmatrix} \lambda_{1}\vec{x}_{1} & \lambda_{2}\vec{x}_{2} & \dots & \lambda_{n}\vec{x}_{n} \end{bmatrix} \\ \quad\;
+= A\begin{bmatrix}           \vec{x}_{1} &            \vec{x}_{2} & \dots &            \vec{x}_{n} \end{bmatrix} \\ \quad\:\,
+= \begin{bmatrix}           A\vec{x}_{1} &           A\vec{x}_{2} & \dots &           A\vec{x}_{n} \end{bmatrix} \\ \quad\:\,
+= \begin{bmatrix} \lambda_{1}\vec{x}_{1} & \lambda_{2}\vec{x}_{2} & \dots & \lambda_{n}\vec{x}_{n} \end{bmatrix} \\ \quad\:\,
 = \begin{bmatrix} \vec{x}_{1} & \vec{x}_{2} & \dots & \vec{x}_{n} \end{bmatrix} 
   \begin{bmatrix} \lambda_{1} & 0       & 0  \\
                            0           & \ddots  & 0  \\
-                           0           & 0       & \lambda_{n} \end{bmatrix} \\ \quad\;
+                           0           & 0       & \lambda_{n} \end{bmatrix} \\ \quad\:\,
 = S\Lambda $$
           
 If $$S = \begin{bmatrix} \vec{x}_{1} & \vec{x}_{2} & \dots & \vec{x}_{n} \end{bmatrix}$$ are linearly independent, then $$det(S) \ne 0$$ and $$S^{-1}$$ exists, so $$A = S\Lambda S^{-1}$$   
@@ -48,9 +48,9 @@ That is, if A is n by n square matrix and eigenvectors are linearly independent,
 
 ## 2.2. Jordan Form
 
-However, if eigenvectors of square matrix A are not linearly independent, we can not decompose A by above procedure. In this case, we have to change our goal from finding $\Lambda$ to finding most simiarl matrix with $\Lambda$. We call it as jordan form.
+However, if eigenvectors of square matrix A are not linearly independent, we can not decompose A by above procedure. In this case, we have to change our goal from finding $$\Lambda$$ to finding most simiarl matrix with $$\Lambda$$. We call it as jordan form.
 
-Let A be n by n square matrix and rank(A) = s. If A can not be decomposed by eigenvalue decomposition because of linearly dependence of eigenvectors of A, we can decompose A as similar jordan form : $A = MJM^{-1}\: 
+Let A be n by n square matrix and rank(A) = s. If A can not be decomposed by eigenvalue decomposition because of linearly dependence of eigenvectors of A, we can decompose A as similar jordan form : $$A = MJM^{-1}\: 
 where\:\: J = \begin{bmatrix} J_{1} & 0      & 0 \\
                               0     & \ddots & 0 \\
                               0     & 0      & J_{s} \end{bmatrix}  
@@ -61,28 +61,28 @@ where\:\: J = \begin{bmatrix} J_{1} & 0      & 0 \\
                                        &             & 0           & 0           & \lambda_{2} &           \\
                                        &             &             &             &             & \ddots &  \\
                                        &             &             &             &             &        & \lambda_{s}
-                              \end{bmatrix}$
+                              \end{bmatrix}$$
                                
 
-For example, let A be 3 by 3 matrix with $\lambda$ multiplicity 3. That is, $\lambda_{1} = \lambda_{2} = \lambda_{3} \overset{let}{=} \lambda$. Let $rank(A - \lambda I_{3}) = 2$. Then, since $rank(A - \lambda I_{3}) + nullity(A - \lambda I_{3}) = 3, \: nullity(A - \lambda I_{3}) = 1$. It means $(A - \lambda I_{3})\vec{y} = \vec{0}$ has 1 solution and this $\vec{y}$ is eigenvector of A.           
-Let $\vec{v}_{1} = \vec{y}$, then we know $A\vec{v}_{1} = \lambda\vec{v}_{1}$. Since there is only 1 eigenvector of A, for any other $\vec{v}$, $(A - \lambda I_{3})\vec{v} \ne \vec{0}$. But there is $\vec{v}_{2}$ s.t $(A - \lambda I_{3})^{2}\vec{v}_{2} \ne \vec{0}$            
+For example, let A be 3 by 3 matrix with $\lambda$ multiplicity 3. That is, $$\lambda_{1} = \lambda_{2} = \lambda_{3} \overset{let}{=} \lambda$$. Let $$rank(A - \lambda I_{3}) = 2$$. Then, since $$rank(A - \lambda I_{3}) + nullity(A - \lambda I_{3}) = 3, \: nullity(A - \lambda I_{3}) = 1$$. It means $$(A - \lambda I_{3})\vec{y} = \vec{0}$$ has 1 solution and this $$\vec{y}$$ is eigenvector of A.           
+Let $$\vec{v}_{1} = \vec{y}$$, then we know $$A\vec{v}_{1} = \lambda\vec{v}_{1}$$. Since there is only 1 eigenvector of A, for any other $$\vec{v}$$, $$(A - \lambda I_{3})\vec{v} \ne \vec{0}$$. But there is $$\vec{v}_{2}$$ s.t $$(A - \lambda I_{3})^{2}\vec{v}_{2} \ne \vec{0}$$            
 
-Let's say genelize eigen vector of grade 2 as $\vec{v}_{2}$. Then 
-$\,(A - \lambda I)\vec{v}_{2} \ne \vec{0} \\ \,
-   (A - \lambda I)^{2}\vec{v}_{2} = \vec{0}$  
+Let's say genelize eigen vector of grade 2 as $$\vec{v}_{2}$$. Then 
+$$\,(A - \lambda I)\vec{v}_{2} \ne \vec{0} \\ \,
+   (A - \lambda I)^{2}\vec{v}_{2} = \vec{0}$$ 
       
-Also, let's define generalized eigenvector of grade 3 as $\vec{v}_{3}$. Then 
-$\,(A - \lambda I)^{2}\vec{v}_{3} \ne \vec{0} \\ \, 
-   (A - \lambda I)^{3}\vec{v}_{3} = \vec{0}$.
+Also, let's define generalized eigenvector of grade 3 as $$\vec{v}_{3}$$. Then 
+$$\,(A - \lambda I)^{2}\vec{v}_{3} \ne \vec{0} \\ \, 
+   (A - \lambda I)^{3}\vec{v}_{3} = \vec{0}$$.
       
-So, $A\vec{v}_{1} = \lambda\vec{v}_{1} \\
+So, $$A\vec{v}_{1} = \lambda\vec{v}_{1} \\
      A\vec{v}_{2} = \vec{v}_{1} + \lambda\vec{v}_{2} \quad \rightarrow \vec{v}_{1}, \; \vec{v}_{2}, \; \vec{v}_{3} \:\: are \:\: linearly \:\: independent\\
-     A\vec{v}_{3} = \vec{v}_{2} + \lambda\vec{v}_{2}$
+     A\vec{v}_{3} = \vec{v}_{2} + \lambda\vec{v}_{2}$$
      
-Let $V = \begin{bmatrix}\vec{v}_{1} & \vec{v}_{2} & \vec{v}_{3} \end{bmatrix}$, then $V$ is invertible.       
-So, $A = VJV^{-1} \:\: where\:\: J = \begin{bmatrix} \lambda & 1       & 0 \\
+Let $$V = \begin{bmatrix}\vec{v}_{1} & \vec{v}_{2} & \vec{v}_{3} \end{bmatrix}$$, then $$V$$ is invertible.       
+So, $$A = VJV^{-1} \:\: where\:\: J = \begin{bmatrix} \lambda & 1       & 0 \\
                                                      0       & \lambda & 1 \\ 
-                                                     0       & 0       & \lambda \end{bmatrix}$ 
+                                                     0       & 0       & \lambda \end{bmatrix}$$ 
 
 ## 2.3. Spectral Decomposition
 

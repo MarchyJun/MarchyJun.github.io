@@ -430,7 +430,7 @@ By using above information, I want to find optimal number of eigen value for com
 - 1. I think restored information is most important. I will choose the number of eigenvalue that have 75 ~ 85% restored information.
 - 2. Compare compression ratio and frobenius norm within above range of eigenvalue. Since the bigger compression ratio is better, and the smaller frobenius norm is better, so I will choose the number of eigenvalue that have biggest value of compression ratio - frobenius norm.  
 
-## 3.1. 80~90% Restored Information
+## 3.1. 75~85% Restored Information
 
 
 ```python

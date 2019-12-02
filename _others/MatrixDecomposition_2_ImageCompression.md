@@ -941,6 +941,6 @@ optimal_compression(org_img,show_graph=True,show_image=True)
 
 I made a simple web application of image compression with Dash and Heroku.
 
-![title](dash.png)
+![Image](/assets/images/MatrixDecomposition_2_ImageCompression_files/dash.png)
 
 http://my-image-compression-app.herokuapp.com/

@@ -1,9 +1,9 @@
 header:
-  - title: Home
-    url: /myhome.html
-  - title: Deep Learning
-    url: /deeplearning.html
-  - title: Machine Learning
-    url: /machinelearning.html
-  - title: Projects
-    url: /projects.html
+  - title: Archive
+    url: /archive.html
+#   - title: Deep Learning
+#     url: /deeplearning.html
+#   - title: Machine Learning
+#     url: /machinelearning.html
+#   - title: Projects
+#     url: /projects.html

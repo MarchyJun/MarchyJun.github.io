@@ -87,10 +87,10 @@ So, $$A = VJV^{-1} \:\: where\:\: J = \begin{bmatrix} \lambda & 1       & 0 \\
 ## 2.3. Spectral Decomposition
 
 If A is square and also symmetric matrix, then we can use spectral decomposition.          
-Let A be n by n square and symmetrix matrix. Let's denote eigenvalue and eigenvector of A as $$\lambda_{i}, \vec{r}_{i}$$, and let $$\Gamma = \begin{bmatrix} \vec{\gamma}_{1} & \vec{\gamma}_{2} & \dots & \vec{\gamma}_{n} \end{bmatrix}$$, 
+Let A be n by n square and symmetrix matrix. Let's denote eigenvalue and eigenvector of A as $$\lambda_{i}, \vec{\gamma_{i}}$$, and let $$\Gamma = \begin{bmatrix} \vec{\gamma_{1}} & \vec{\gamma_{2}} & \dots & \vec{\gamma_{n}} \end{bmatrix}$$, 
 $$\Lambda = \begin{bmatrix} \lambda_{1} & 0       & 0  \\
                            0           & \ddots  & 0  \\
-                           0           & 0       & \lambda_{n} \end{bmatrix} $. Then $\: \Gamma \Gamma^{T} = \Gamma^{T} \Gamma  = I$$  
+                           0           & 0       & \lambda_{n} \end{bmatrix} $$. Then $$\: \Gamma \Gamma^{T} = \Gamma^{T} \Gamma  = I$$  
 
 - If A is full rank, $$A = \Gamma \Lambda \Gamma^{T} \\ \;\:\,
                          = \sum_{i = 1}^{n}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} \\ $$
@@ -110,18 +110,18 @@ Eigenvalue decomposition, Jordan form, Spectral decomposition can be used only w
            
 Let A (n, p) has rank $$r \leqslant min(n, p)$$          
 Then 
-$$AA^{T}$$ : n by n square, symmetric matrix $$\rightarrow \:\: AA^{T} = \Gamma\Lambda\Gamma^{T} = \sum_{i=1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} $$
+$$AA^{T}$$ : n by n square, symmetric matrix $$\rightarrow \:\: AA^{T} = \Gamma\Lambda\Gamma^{T} = \sum_{i=1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} //$$
 
-$$\quad\;\;\: A^{T}A$ : p by p square, symmetric matrix $\rightarrow \:\: A^{T}A = \Delta\Lambda\Delta^{T} = \sum_{i=1}^{r}{\lambda_{i}\delta_{i}\delta{i}^{T}}$$      
+$$\quad\;\;\: A^{T}A$$ : p by p square, symmetric matrix $$\rightarrow \:\: A^{T}A = \Delta\Lambda\Delta^{T} = \sum_{i=1}^{r}{\lambda_{i}\delta_{i}\delta{i}^{T}}$$      
       
 And $$A = \Gamma\Sigma\Delta^{T} \\ \:\,\;
        = \Gamma_{1}\Sigma_{1}\Delta_{1}^{T} \\ \:\,\;
        = \sum_{i=1}^{r}{\lambda_{i}^{\frac{1}{2}}\gamma_{i}\delta_{i}} \qquad where\:\: 
 \Gamma=\begin{bmatrix} \Gamma_{1}\,(n, r) \, \vert \, \Gamma_{0}\,(n,n-r) \end{bmatrix} 
-      =\begin{bmatrix} \gamma_{1} & \dots & \gamma_{r} \,\vert\, \gamma_{r+1} & \dots & \gamma_{n} \end{bmatrix}\\ \qquad\qquad\qquad\qquad\qquad\;\; 
+      =\begin{bmatrix} \gamma_{1} & \dots & \gamma_{r} \,\vert\, \gamma_{r+1} & \dots & \gamma_{n} \end{bmatrix}\\ \qquad\qquad\qquad\qquad\qquad\quad\;\; 
 \Delta = \begin{bmatrix} \Delta_{1}\,(p,r) \, \vert \, \Delta_{0}\,(p,p-r) \end{bmatrix} 
        = \begin{bmatrix} \delta_{1} & \dots & \delta_{r} \,\vert\, \delta_{r+1} & \dots & \delta_{p} \end{bmatrix}\\
-\qquad\qquad\qquad\qquad\qquad\;\;
+\qquad\qquad\qquad\qquad\qquad\quad\;\;
 \Sigma = \begin{bmatrix} \Sigma_{1} & 0         \\
                          0          & \Sigma_{0}\end{bmatrix}, \:\: \Sigma_{1} = diag\{\lambda_{1}^{\frac{1}{2}}, \dots \lambda_{r}^{\frac{1}{2}}\} 
                 $$

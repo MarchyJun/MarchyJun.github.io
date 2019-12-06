@@ -19,7 +19,10 @@ B\vec{v} = 0 \:\: (\,let \:\: \lambda I_{p} - A = B \,) $$
         
 Now note that null space of B is $$N(B) = \{\vec{x} \in R^{p} \vert B\vec{x} = 0 \}$$. So $\vec{v} \in N(B)$. It means that $N(B) = N(\lambda I_{p} - A)$ is nontrivial.              
 Also note that for matrix M, M's columns are linearly independent iff $N(B) = {0}$. Since $N(B) \ne {0}$, it means B's columns are not linearly independent. So $B = \lambda I_{p} - A$ is not invertible and $det(\lambda I_{p} - A) = 0$             
-That is, $$ There\:\: is\:\: nonzero\:\: \vec{v}\:\: s.t\:\: A\vec{v} = \lambda \vec{v}\; \leftrightarrow\; det(\lambda I_{p} - A) = 0 $$              
+That is, 
+
+$$ There\:\: is\:\: nonzero\:\: \vec{v}\:\: s.t\:\: A\vec{v} = \lambda \vec{v}\; \leftrightarrow\; det(\lambda I_{p} - A) = 0 $$   
+
 There are up to p eigenvalues $\lambda_{1} \geqslant \lambda_{2} \geqslant \dots \geqslant \lambda_{p}$ of A, and for each eigenvalue $\lambda_{i}$, a correspond eigenvector $\vec{v}_{i}$ exists
 
 # 2. Matrix Decomposition 

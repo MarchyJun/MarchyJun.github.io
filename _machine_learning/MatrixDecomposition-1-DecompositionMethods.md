@@ -110,9 +110,9 @@ Eigenvalue decomposition, Jordan form, Spectral decomposition can be used only w
            
 Let A (n, p) has rank $$r \leqslant min(n, p)$$          
 Then 
-$$AA^{T}$$ : n by n square, symmetric matrix $$\rightarrow \:\: AA^{T} = \Gamma\Lambda\Gamma^{T} = \sum_{i=1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} //$$
+$$AA^{T}$$ : n by n square, symmetric matrix $$\rightarrow \:\: AA^{T} = \Gamma\Lambda\Gamma^{T} = \sum_{i=1}^{r}{\lambda_{i}\gamma_{i}\gamma_{i}^{T}} \\$$
 
-$$\quad\;\;\: A^{T}A$$ : p by p square, symmetric matrix $$\rightarrow \:\: A^{T}A = \Delta\Lambda\Delta^{T} = \sum_{i=1}^{r}{\lambda_{i}\delta_{i}\delta{i}^{T}}$$      
+$$\quad\;\;\; A^{T}A$$ : p by p square, symmetric matrix $$\rightarrow \:\: A^{T}A = \Delta\Lambda\Delta^{T} = \sum_{i=1}^{r}{\lambda_{i}\delta_{i}\delta{i}^{T}}$$      
       
 And $$A = \Gamma\Sigma\Delta^{T} \\ \:\,\;
        = \Gamma_{1}\Sigma_{1}\Delta_{1}^{T} \\ \:\,\;

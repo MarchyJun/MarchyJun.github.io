@@ -227,14 +227,13 @@ plugins:
 ## => Collections
 ##############################
 collections:
-  mlp:
+  machine_learning:
     output: true
-  super:
+  deep_learning:
     output: true
-  unsuper:
+  data_analysis:
     output: true
-  others:
-    output: true
+ 
 
 
 

@@ -118,10 +118,10 @@ And $$A = \Gamma\Sigma\Delta^{T} \\ \:\,\;
        = \Gamma_{1}\Sigma_{1}\Delta_{1}^{T} \\ \:\,\;
        = \sum_{i=1}^{r}{\lambda_{i}^{\frac{1}{2}}\gamma_{i}\delta_{i}} \qquad where\:\: 
 \Gamma=\begin{bmatrix} \Gamma_{1}\,(n, r) \, \vert \, \Gamma_{0}\,(n,n-r) \end{bmatrix} 
-      =\begin{bmatrix} \gamma_{1} & \dots & \gamma_{r} \,\vert\, \gamma_{r+1} & \dots & \gamma_{n} \end{bmatrix}\\ \qquad\qquad\qquad\qquad\qquad\quad\;\; 
+      =\begin{bmatrix} \gamma_{1} & \dots & \gamma_{r} \,\vert\, \gamma_{r+1} & \dots & \gamma_{n} \end{bmatrix}\\ \qquad\qquad\qquad\qquad\qquad\quad\;\;\;\, 
 \Delta = \begin{bmatrix} \Delta_{1}\,(p,r) \, \vert \, \Delta_{0}\,(p,p-r) \end{bmatrix} 
        = \begin{bmatrix} \delta_{1} & \dots & \delta_{r} \,\vert\, \delta_{r+1} & \dots & \delta_{p} \end{bmatrix}\\
-\qquad\qquad\qquad\qquad\qquad\quad\;\;
+\qquad\qquad\qquad\qquad\qquad\quad\;\;\;\,
 \Sigma = \begin{bmatrix} \Sigma_{1} & 0         \\
                          0          & \Sigma_{0}\end{bmatrix}, \:\: \Sigma_{1} = diag\{\lambda_{1}^{\frac{1}{2}}, \dots \lambda_{r}^{\frac{1}{2}}\} 
                 $$

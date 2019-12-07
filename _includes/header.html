@@ -8,19 +8,12 @@
           <div class="main">
                   <!-- 1. -->
                   <div class="header__title">
-                          <!-- 1.1 left_name_part -->
                           <div class="header__brand">
                             {%- include svg/logo.svg -%}
-                            {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
-                            {%- include snippets/get-nav-url.html path=_paths_root -%}       
+<!--                             {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
+                            {%- include snippets/get-nav-url.html path=_paths_root -%}        -->
                              <h4> YoungJun </h> 
                           </div>
-
-                          <!-- 1.2 right_search_part -->
-<!--                           {%- if site.search.provider -%}
-                            <button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button>
-                          {%- endif -%} -->
-
                   </div>
                   
                   <!-- 2. -->

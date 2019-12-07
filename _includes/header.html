@@ -11,7 +11,7 @@
                           <!-- 1.1 left_name_part -->
                           <div class="header__brand">
                             {%- include svg/logo.svg -%}
-<!--                             {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%} -->
+                            {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
                             {%- include snippets/get-nav-url.html path=_paths_root -%}
                             {%- if site.title -%}
                               <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href = "https://marchyjun.github.io/myarchive.html" </a> 
@@ -20,9 +20,9 @@
                           </div>
 
                           <!-- 1.2 right_search_part -->
-                          {%- if site.search.provider -%}
+<!--                           {%- if site.search.provider -%}
                             <button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button>
-                          {%- endif -%}
+                          {%- endif -%} -->
 
                   </div>
                   

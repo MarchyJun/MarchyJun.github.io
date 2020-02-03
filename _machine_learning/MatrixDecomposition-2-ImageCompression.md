@@ -1,6 +1,6 @@
 ---
 layout: article
-title: MatrixDecomposition - (2) Image Compression with SVD
+title: Matrix Decomposition - (2) Image Compression with SVD
 mathjax: true
 aside:
   toc: true

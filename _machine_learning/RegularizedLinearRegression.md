@@ -1,4 +1,10 @@
-
+---
+layout: article
+title: Regularized Linear Regression
+mathjax: true
+aside:
+  toc: true
+---
 
 ```python
 import pandas as pd

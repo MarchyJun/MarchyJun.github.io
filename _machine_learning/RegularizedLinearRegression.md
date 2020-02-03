@@ -287,7 +287,7 @@ plt.show()
 ```
 
 
-![Image](/assets/images/RegularizedLinearRegression_files/RegularizedLinearRegression_files/RegularizedLinearRegression_47_0.png)
+![Image](/assets/images/RegularizedLinearRegression_files/RegularizedLinearRegression_47_0.png)
 
 
 The coefficients of the Ridge model are close to zero, but most do not go to exactly zero. However, we can see that the coefficients of the Lasso model are mostly 0.

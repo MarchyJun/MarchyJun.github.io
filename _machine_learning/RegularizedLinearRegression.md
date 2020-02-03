@@ -59,6 +59,7 @@ I set 70% of the total data as train data.
 
 # 2. Multiple Linear Regression
 
+In multiple linear regression,
 $$ y_{i} = \beta_{0} + \beta_{1}x_{1i} + \beta_{2}x_{2i} + \dots + \beta_{p-1}x_{p-1i} + \epsilon_{i} \,\, where \,\, i \in \{1,2, ... , n\}, \\ 
   Let \,\,  Y = \begin{bmatrix} y_{1} \\ \vdots \\ y_{n} \end{bmatrix}, \; 
       X = \begin{bmatrix} 1 & x_{11} & \dots & x_{p-1,1} \\

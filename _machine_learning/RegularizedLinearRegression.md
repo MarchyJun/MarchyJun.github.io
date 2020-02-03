@@ -59,22 +59,17 @@ I set 70% of the total data as train data.
 
 # 2. Multiple Linear Regression
 
-$ y_{i} = \beta_{0} + \beta_{1}x_{1i} + \beta_{2}x_{2i} + \dots + \beta_{p-1}x_{p-1i} + \epsilon_{i} $ where $ i \in \{1,2, ... , n\}$,                 
-
-Let $ Y = \begin{bmatrix} y_{1} \\ \vdots \\ y_{n} \end{bmatrix}, \; 
+$ y_{i} = \beta_{0} + \beta_{1}x_{1i} + \beta_{2}x_{2i} + \dots + \beta_{p-1}x_{p-1i} + \epsilon_{i} \,\, where \,\, i \in \{1,2, ... , n\}, \\ 
+  Let \,\,  Y = \begin{bmatrix} y_{1} \\ \vdots \\ y_{n} \end{bmatrix}, \; 
       X = \begin{bmatrix} 1 & x_{11} & \dots & x_{p-1,1} \\
                           \vdots & \vdots & \vdots & \vdots \\
                           1 & x_{1n} & \dots & x_{p-1,n}\end{bmatrix}, \; 
       \beta = \begin{bmatrix} \beta_{0} \\ \vdots \\ \beta_{p-1} \end{bmatrix}, \;
-      \epsilon = \begin{bmatrix} \epsilon_{1} \\ \vdots \\ \epsilon_{n} \end{bmatrix}$ 
-
-Then $ Y = X \beta + \epsilon $
-
-$\hat{\beta_{OLS}} = \underset{\beta}{\arg\min}(Y - X \beta)^{T}(Y-X \beta) \overset{let}{=} \underset{\beta}{\arg\min}J_{OLS}(\beta) $
-
-$\frac{\partial J_{OLS}\,(\beta \,)}{\partial \beta} = -2X^{T}Y + 2X^{T}X\beta = 0 \rightarrow (X^{T}X)\beta = X^{T}Y$
-
-if $ \;(X^{T}X)^{-1} \;$ is exist,  $\; \hat{\beta_{OLS}} = (X^{T}X)^{-1}X^{T}Y $
+      \epsilon = \begin{bmatrix} \epsilon_{1} \\ \vdots \\ \epsilon_{n} \end{bmatrix}, \\
+  Then \,\, Y = X \beta + \epsilon \\
+  \hat{\beta_{OLS}} = \underset{\beta}{\arg\min}(Y - X \beta)^{T}(Y-X \beta) \overset{let}{=} \underset{\beta}{\arg\min}J_{OLS}(\beta) \\
+  \frac{\partial J_{OLS}\,(\beta \,)}{\partial \beta} = -2X^{T}Y + 2X^{T}X\beta = 0 \rightarrow (X^{T}X)\beta = X^{T}Y \\
+  if \,\, (X^{T}X)^{-1}\,\, is \,\, exist,  \,\, \hat{\beta_{OLS}} = (X^{T}X)^{-1}X^{T}Y $
 
 
 ```python

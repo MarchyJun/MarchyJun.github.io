@@ -110,21 +110,21 @@ So, we will be able to build a better model if we use an estimator with very low
 
 ### 2.2. Cause of Problem
 
-(case 1) $ X(n \times p) \;\;where\; n < p $, 
-$\; e.g. \; X = \begin{bmatrix} ㅁ & ㅁ & \dots & \dots & ㅁ \\ 
+(case 1) $ X(n \times p) \;\;where\; n < p $,
+$$\; e.g. \; X = \begin{bmatrix} ㅁ & ㅁ & \dots & \dots & ㅁ \\ 
                       ㅁ & ㅁ & \dots & \dots & ㅁ \\ 
-                      ㅁ & ㅁ & \dots & \dots & ㅁ \end{bmatrix}$
+                      ㅁ & ㅁ & \dots & \dots & ㅁ \end{bmatrix}$$
 
 - $Full\; rank$ of $X^{T}X \,(p \times p)$ is $p$. But, $rank(X^{T}X)$ = $rank(X)$ $\le min(n,p) = n$, so $rank(X^{T}X) < full\; rank\; $.       
 That is, when $X$ has shape $n \times p \;\;where\; n < p$, $X^{T}X$ always becomes singular matrix, which means that it does not have inverse matrix.
 
 (case 2) $ X(n \times p) \;\;where\; n > p $, 
-$\; e.g. \; X = \begin{bmatrix} ㅁ & ㅁ & ㅁ \\
+$$ \; e.g. \; X = \begin{bmatrix} ㅁ & ㅁ & ㅁ \\
                                 ㅁ & ㅁ & ㅁ \\
                                 \vdots & \vdots & \vdots \\ 
                                 \vdots & \vdots & \vdots \\ 
                                 ㅁ & ㅁ & ㅁ \\
-                                ㅁ & ㅁ & ㅁ \\ \end{bmatrix}$
+                                ㅁ & ㅁ & ㅁ \\ \end{bmatrix}$$
 
 
 - $Full\; rank$ of $X^{T}X \,(p \times p)$ is $p$. Note that $rank(X^{T}X)$ = $rank(X)$ $\le min(n,p) = p$. But, if there are $k$ linearly dependent columns in $X$, $rank(X^{T}X) = p-k < full\; rank\; $. That is, when $X$ has shape $n \times p \;\;where\; n > p$, $X^{T}X$ becomes singular matrix and does not have an inverse matrix if $X$ has linearly dependent columns.

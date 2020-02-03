@@ -141,11 +141,11 @@ We have showed that $X^{T}X$ becomes singular matrix because of linearly depende
 
 If we add a very small value to the diagonal of $X^{T}X$, we can remove linearly dependent columns. Adding a constraint of L2 norm to $\beta$ in the process of finding $\hat{\beta}$ will change the cost function slightly. And this change has the effect of adding a small constant value to the diagonal of $X^{T}X$. So, we can solve the problem of not getting inverse and get $\hat{\beta}_{ridge}$. This model will have some bias, but its variance will be much smaller, resulting in a smaller MSE than the existing model.
 
-![title](ridge.png)
+![Image](/assets/images/RegularizedLinearRegression_files/ridge.png)
 
 Let's look at this as a simple three-dimensional graph. Total cose $J_{Total}$ is sum of $J_{OLS}$ and $J_{Ridge}$. The $\beta$ value that minimize $J_{Total}$ is where the two graphs meet. In this case, the larger the $\lambda$ value, the slower the spreading speed of the graph. So, $J_{Total}$ also becomes function of $\lambda$ and $\beta$. By fixing one of the two values, we can find the best set of values that minimize $J_{Total}$.
 
-![title](ridge_cost...png)
+![Image](/assets/images/RegularizedLinearRegression_files/ridge_cost...png)
 
 
 ```python
@@ -215,7 +215,7 @@ print("Root Mean Squared Error: {}".format(rmse))
 
 In Ridge regression, the problem of $\hat{\beta}$ volatility could be solved by giving $\beta$ a L2 norm constraint. In Lasso regression, the problem of $\hat{\beta}$ volatility is solved by giving $\beta$ a constraint of L1 norm. At this time, unlike L2 norm, L1 norm cannot be differentiated, so an optimization method called coordinate descent is used to obtain $\hat{\beta}$.
 
-![title](ridge_lasso.png)
+![Image](/assets/images/RegularizedLinearRegression_files/ridge_lasso.png)
 
 Lasso regression is different with ridge regression only in that the graph is rhombic, and the rest is the same as ridge regression.
 
@@ -240,7 +240,7 @@ print("Root Mean Squared Error: {}".format(rmse))
 
 Both Ridge and Lasso solve the problem of $\hat{\beta}$ volatility by constraining $\beta$. But, there is small difference between them: the L2 norm used in the ridge is in the shape of a circle, and the L1 norm used in the lasso is in the shape of a rhombus. Due to this difference in graph form, there are some differences in the characteristics of the $\hat{\beta}$ values in ridge and lasso regression.
 
-![title](ridge_lasso2.png)
+![Image](/assets/images/RegularizedLinearRegression_files/ridge_lasso2.png)
 
 Since the L2 norm used in the ridge regression is in the form of a circle, it is very unlikely that the point where $J_{Ridge}$ and $J_{OLS}$ meet will be on axis. Thus, while the $\beta$ values are small, most are not zero.
 
@@ -291,7 +291,7 @@ plt.show()
 ```
 
 
-![png](RegularizedLinearRegression_files/RegularizedLinearRegression_47_0.png)
+![Image](/assets/images/RegularizedLinearRegression_files/RegularizedLinearRegression_files/RegularizedLinearRegression_47_0.png)
 
 
 The coefficients of the Ridge model are close to zero, but most do not go to exactly zero. However, we can see that the coefficients of the Lasso model are mostly 0.

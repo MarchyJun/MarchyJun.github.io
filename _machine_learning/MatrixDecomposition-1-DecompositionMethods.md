@@ -1,6 +1,6 @@
 ---
 layout: article
-title: MatrixDecomposition - (1) Decomposition Methods
+title: Matrix Decomposition - (1) Decomposition Methods
 mathjax: true
 aside:
   toc: true
